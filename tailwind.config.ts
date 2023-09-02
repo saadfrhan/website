@@ -16,10 +16,6 @@ module.exports = {
       },
     },
     extend: {
-			fontFamily: {
-				roboto: ['var(--font-roboto)'],
-        "open-sans": ['var(--font-open-sans)'],
-			},
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,9 +56,6 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-			backgroundImage: {
-				main: "url('/images/background.png')",
-			},
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

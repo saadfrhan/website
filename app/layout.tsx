@@ -1,13 +1,14 @@
-import { openSans, roboto } from '@/lib/fonts'
 import './globals.css'
-import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react';
+import { Inter } from 'next/font/google'
+import Navbar from '@/components/layout/navbar'
+import { ThemeProvider } from "@/components/theme-provider";
 
-export const metadata: Metadata = {
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
   title: 'Saad Farhan',
-  description: 'Passionate developer 🚀 | Open source contributor 💻 | JavaScript enthusiast 🌐 | Lifelong learner 📚 | Let&#39;s innovate together! 🤝',
+  description: 'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.',
 }
-
 
 export default function RootLayout({
   children,
@@ -15,11 +16,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${roboto.variable} ${openSans.variable}`}>
-      <body>
-			{children}
-			<Analytics />
-			</body>
+    <html lang="en">
+      <body className={inter.className}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <div className='space-y-4'>
+        <Navbar />
+        <div className='py-10'>
+        {children}
+        </div>
+        </div>
+      </ThemeProvider>
+      </body>
     </html>
   )
 }
