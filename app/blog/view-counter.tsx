@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { increment } from '@/server-actions/increment-view';
+import { increment } from 'server-actions/increment-view';
 
 export default function ViewCounter({
   slug,

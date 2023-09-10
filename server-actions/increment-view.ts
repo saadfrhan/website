@@ -1,6 +1,6 @@
 'use server';
 
-import { queryBuilder } from '@/lib/db/planetscale';
+import { queryBuilder } from 'lib/db/planetscale';
 
 export async function increment(slug: string) {
   const data = await queryBuilder
