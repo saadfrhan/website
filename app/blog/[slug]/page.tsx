@@ -19,11 +19,37 @@ export async function generateMetadata({
     return;
   }
 
-  const { title, summary: description } = post;
+  const {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+    slug,
+  } = post;
+
+  const ogImage = `/og/${slug}.png`;
 
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `https://saadfarhan.vercel.app/blog/${slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
