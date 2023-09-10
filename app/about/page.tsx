@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
-import { File, Mail } from 'lucide-react';
-import { Profile } from 'sanity-cms/schemas/types/profile';
-import { getMainProfileData } from 'sanity-cms/queries';
-import { buttonVariants } from 'components/ui/button';
-import { Card } from 'components/ui/card';
-import { H2 } from 'components/ui/h2';
+import Image from "next/image";
+import { PortableText } from "@portabletext/react";
+import { File, Mail } from "lucide-react";
+import { Profile } from "@/sanity/schemas/types/profile";
+import { getMainProfileData } from "@/sanity/queries";
+import { buttonVariants } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { H2 } from "@/components/ui/h2";
 
 export default async function About() {
   const profile: Profile[] = await getMainProfileData();
@@ -23,16 +23,11 @@ export default async function About() {
                 </h1>
 
                 <div className="flex flex-col gap-y-3 dark:text-muted-foreground leading-relaxed">
-                  <PortableText
-                    value={data.fullBio}
-                    components={{
-                      listItem: {
-                        bullet: ({ children }) => (
-                          <li className="list-disc ml-10">{children}</li>
-                        ),
-                      },
-                    }}
-                  />
+                  <PortableText value={data.fullBio} components={{
+                    listItem: {
+                      bullet: ({ children }) => <li className="list-disc ml-10">{children}</li>,
+                    }
+                  }} />
                 </div>
               </div>
 
@@ -50,8 +45,8 @@ export default async function About() {
                   <a
                     href={`${data.resumeURL}?dl=${data.fullName}_resume`}
                     className={buttonVariants({
-                      className: 'gap-x-2 w-full',
-                      variant: 'outline',
+                      className: "gap-x-2 w-full",
+                      variant: 'outline'
                     })}
                   >
                     <File className="text-base" /> Open Resumé
