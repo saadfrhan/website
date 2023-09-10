@@ -7,6 +7,12 @@ import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { H2 } from '@/components/ui/h2';
 
+export const metadata = {
+  title: 'About',
+  description:
+    'Saad Farhan, your Jamstack wizard in Karachi, crafting the future of web development with expertise in JavaScript frameworks and a commitment to quality. 🚀🌟',
+};
+
 export default async function About() {
   const profile: Profile[] = await getMainProfileData();
 
