@@ -27,7 +27,7 @@ export default async function Home() {
               <ul className="flex items-center gap-x-6">
                 {Object.entries(data.socialLinks)
                   .sort()
-                  .map(([key, value]: any, id) => (
+                  .map(([_, value]: any, id) => (
                     <li key={id}>
                       <a
                         href={value}

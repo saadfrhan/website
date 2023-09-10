@@ -3,9 +3,10 @@
 # saadfrhan.vercel.app
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) & [shadcn/ui](https://ui.shadcn.com)
-- **Content Management**: [Sanity](https://sanity.io) 
+- **Content Management**: [Sanity](https://sanity.io)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **Deployment**: [Vercel](https://vercel.com)
 
 ## Running Locally
 
@@ -13,6 +14,7 @@
 git clone https://github.com/saadfrhan/website.git
 cd website
 pnpm install
+pnpm cleanup # reset content folder
 pnpm dev
 ```
 

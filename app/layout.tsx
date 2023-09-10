@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     yandex: '30dab239bbb58d8f',
   },
 };
-
 export default function RootLayout({
   children,
 }: {
