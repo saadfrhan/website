@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { PortableText } from '@portabletext/react';
 import fallBackImage from 'public/project.png';
-import { getSingleProject } from '@/sanity-cms/queries';
-import { ProjectType } from '@/sanity-cms/schemas/types/project';
+import { getSingleProject } from '@/sanity/queries';
+import { ProjectType } from '@/sanity/schemas/types/project';
 import { H2 } from '@/components/ui/h2';
 import { buttonVariants } from '@/components/ui/button';
 import { H1 } from '@/components/ui/h1';
-import client from '@/sanity-cms/config';
+import client from '@/sanity/config';
 
 type Props = {
   params: {
