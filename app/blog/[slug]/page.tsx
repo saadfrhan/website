@@ -9,6 +9,10 @@ import { Suspense } from 'react';
 
 export async function generateMetadata({
   params,
+}: {
+  params: {
+    slug: string;
+  };
 }): Promise<Metadata | undefined> {
   const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
@@ -79,7 +83,13 @@ function formatDate(date: string) {
   return `${fullDate} (${formattedDate})`;
 }
 
-export default async function Blog({ params }) {
+export default async function Blog({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}) {
   const post = allBlogs.find((post) => post.slug === params.slug);
 
   if (!post) {
