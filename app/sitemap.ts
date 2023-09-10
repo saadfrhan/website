@@ -15,7 +15,7 @@ export default async function sitemap() {
     }[]
   > =>
     await client.fetch(
-      groq`*[_type == "project" && slug.current == $slug][0]{
+      groq`*[_type == "project"]{
       _updatedAt,
       slug
     }`
