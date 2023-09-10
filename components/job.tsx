@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { Job } from "sanity-cms/schemas/types/job";
-import { getJob } from "sanity-cms/queries";
-import { H2 } from "./ui/h2";
+import Image from 'next/image';
+import { Job } from '@/sanity-cms/schemas/types/job';
+import { getJob } from '@/sanity-cms/queries';
+import { H2 } from './ui/h2';
 
 export default async function Job() {
   const jobs: Job[] = await getJob();
@@ -34,9 +34,8 @@ export default async function Job() {
               <h3 className="text-xl font-bold">{data.name}</h3>
               <p>{data.title}</p>
               <small className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
-                {data.startDate.toString()} - {
-                  data.endDate ? data.endDate.toString() : 'Present'
-                }
+                {data.startDate.toString()} -{' '}
+                {data.endDate ? data.endDate.toString() : 'Present'}
               </small>
               <p className="text-base my-4">{data.description}</p>
             </div>

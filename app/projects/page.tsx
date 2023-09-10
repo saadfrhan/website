@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectType } from 'sanity-cms/schemas/types/project';
-import { getProjects } from 'sanity-cms/queries';
-import { Button } from 'components/ui/button';
-import { H1 } from 'components/ui/h1';
+import { ProjectType } from '@/sanity-cms/schemas/types/project';
+import { getProjects } from '@/sanity-cms/queries';
+import { Button } from '@/components/ui/button';
+import { H1 } from '@/components/ui/h1';
 
 export default async function Project() {
   const projects: ProjectType[] = await getProjects();

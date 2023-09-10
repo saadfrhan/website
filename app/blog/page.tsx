@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { allBlogs } from 'contentlayer/generated';
+import { allBlogs } from '@/contentlayer/generated';
 import ViewCounter from './view-counter';
-import { getViewsCount } from 'lib/db/metrics';
-import { H1 } from 'components/ui/h1';
+import { getViewsCount } from '@/lib/db/metrics';
+import { H1 } from '@/components/ui/h1';
 
 export const metadata: Metadata = {
   title: 'Blog',
