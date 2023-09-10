@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { Job } from '@/sanity-cms/schemas/types/job';
-import { getJob } from '@/sanity-cms/queries';
+import { Job } from '@/sanity/schemas/types/job';
+import { getJob } from '@/sanity/queries';
 import { H2 } from './ui/h2';
 
 export default async function Job() {

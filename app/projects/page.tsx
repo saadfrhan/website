@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectType } from '@/sanity-cms/schemas/types/project';
-import { getProjects } from '@/sanity-cms/queries';
+import { ProjectType } from '@/sanity/schemas/types/project';
+import { getProjects } from '@/sanity/queries';
 import { Button } from '@/components/ui/button';
 import { H1 } from '@/components/ui/h1';
 
@@ -9,7 +9,7 @@ export default async function Project() {
   const projects: ProjectType[] = await getProjects();
 
   return (
-    <main className="container space-y-8">
+    <main className="w-full px-8 mx-auto  space-y-8">
       <H1>Projects</H1>
       <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
         {projects.map((project) => (

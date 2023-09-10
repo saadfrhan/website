@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
+
 const description =
   'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.';
 
@@ -54,10 +55,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="space-y-4">
-            <Navbar />
-            <div className="py-10">{children}</div>
-          </div>
+          <Navbar />
+          <div className="py-10">{children}</div>
         </ThemeProvider>
         <Analytics />
       </body>

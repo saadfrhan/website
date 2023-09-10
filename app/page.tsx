@@ -1,6 +1,6 @@
 import Hero from '@/icons/Hero';
 import Job from '@/components/job';
-import { Profile } from '@/sanity-cms/schemas/types/profile';
+import { Profile } from '@/sanity/schemas/types/profile';
 import {
   AiFillGithub as Github,
   AiFillLinkedin as Linkedin,
@@ -8,7 +8,7 @@ import {
 } from 'react-icons/ai';
 import { createElement } from 'react';
 import { buttonVariants } from '@/components/ui/button';
-import { getBasicProfileData } from '@/sanity-cms/queries';
+import { getBasicProfileData } from '@/sanity/queries';
 import { H1 } from '@/components/ui/h1';
 
 export default async function Home() {
@@ -17,7 +17,7 @@ export default async function Home() {
   const icons = [Github, Linkedin, Twitter];
 
   return (
-    <main className="container">
+    <main className="w-full px-8 mx-auto ">
       <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 mb-16">
         {profile &&
           profile.map((data) => (
@@ -27,7 +27,7 @@ export default async function Home() {
               <ul className="flex items-center gap-x-6">
                 {Object.entries(data.socialLinks)
                   .sort()
-                  .map(([key, value]: any, id) => (
+                  .map(([_, value]: any, id) => (
                     <li key={id}>
                       <a
                         href={value}
