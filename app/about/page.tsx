@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { File, Mail } from "lucide-react";
-import { Profile } from "@/sanity/schemas/types/profile";
-import { getMainProfileData } from "@/sanity/queries";
-import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { H2 } from "@/components/ui/h2";
+import { Profile } from "sanity-cms/schemas/types/profile";
+import { getMainProfileData } from "sanity-cms/queries";
+import { buttonVariants } from "components/ui/button";
+import { Card } from "components/ui/card";
+import { H2 } from "components/ui/h2";
 
 export default async function About() {
   const profile: Profile[] = await getMainProfileData();

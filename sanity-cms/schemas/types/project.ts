@@ -11,5 +11,6 @@ export type ProjectType = {
     alt: string | null;
     image: string;
   };
+  _createdAt: Date;
   description: PortableTextBlock[];
 };
