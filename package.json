@@ -8,11 +8,15 @@
     "cleanup": "node ./lib/cleanup.mjs"
   },
   "dependencies": {
+    "@babel/core": ">=7.0.0 <8.0.0",
     "@planetscale/database": "^1.11.0",
     "@portabletext/react": "^3.0.7",
     "@radix-ui/react-dropdown-menu": "^2.0.5",
     "@radix-ui/react-slot": "^1.0.2",
     "@sanity/client": "^6.4.9",
+    "@sanity/icons": "^2.4.1",
+    "@sanity/types": "^3.0.0",
+    "@sanity/ui": "^1.0.0",
     "@sanity/vision": "^3.16.2",
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
@@ -38,6 +42,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "react-is": ">=18.0.0 <19.0.0",
     "react-tweet": "^3.1.1",
     "react-wrap-balancer": "^1.1.0",
     "rehype-autolink-headings": "^7.0.0",
