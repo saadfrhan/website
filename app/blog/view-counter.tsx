@@ -24,9 +24,11 @@ export default function ViewCounter({
     }
   }, []);
 
+  const views = number.toLocaleString();
+
   return (
     <p className="text-muted-foreground">
-      {`${number.toLocaleString()} views`}
+      {`${views} view${views === '1' ? '' : 's'}`}
     </p>
   );
 }
