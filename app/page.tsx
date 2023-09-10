@@ -1,15 +1,15 @@
-import Hero from 'icons/Hero';
-import Job from 'components/job';
-import { Profile } from 'sanity-cms/schemas/types/profile';
+import Hero from '@/icons/Hero';
+import Job from '@/components/job';
+import { Profile } from '@/sanity-cms/schemas/types/profile';
 import {
   AiFillGithub as Github,
   AiFillLinkedin as Linkedin,
   AiOutlineTwitter as Twitter,
 } from 'react-icons/ai';
 import { createElement } from 'react';
-import { buttonVariants } from 'components/ui/button';
-import { getBasicProfileData } from 'sanity-cms/queries';
-import { H1 } from 'components/ui/h1';
+import { buttonVariants } from '@/components/ui/button';
+import { getBasicProfileData } from '@/sanity-cms/queries';
+import { H1 } from '@/components/ui/h1';
 
 export default async function Home() {
   const profile: Profile[] = await getBasicProfileData();

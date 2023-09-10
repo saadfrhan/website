@@ -6,7 +6,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
-const title = 'Saad Farhan';
 const description =
   'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.';
 
