@@ -35,7 +35,7 @@ export default async function Project({ params }: Props) {
   const project: ProjectType = await getSingleProject(slug);
 
   return (
-    <main className="container">
+    <main className="w-full px-8 mx-auto ">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <H1>

@@ -56,10 +56,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="space-y-4">
-            <Navbar />
-            <div className="py-10">{children}</div>
-          </div>
+          <Navbar />
+          <div className="py-10">{children}</div>
         </ThemeProvider>
         <Analytics />
       </body>
