@@ -1,7 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Navbar from 'components/layout/navbar';
-import { ThemeProvider } from 'components/theme-provider';
+import Navbar from '@/components/layout/navbar';
+import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 
