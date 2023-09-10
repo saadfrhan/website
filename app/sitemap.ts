@@ -1,5 +1,5 @@
-import { allBlogs } from 'contentlayer/generated';
-import client from 'sanity-cms/config';
+import { allBlogs } from '@/contentlayer/generated';
+import client from '@/sanity-cms/config';
 
 interface Blogs {
   url: string;
