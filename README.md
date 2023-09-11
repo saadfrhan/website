@@ -14,7 +14,6 @@
 git clone https://github.com/saadfrhan/website.git
 cd website
 pnpm install
-pnpm cleanup # reset content folder
 pnpm dev
 ```
 

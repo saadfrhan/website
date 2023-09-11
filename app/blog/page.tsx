@@ -14,7 +14,7 @@ export default async function BlogPage() {
   const allViews = await getViewsCount();
 
   return (
-    <section className="w-full px-4 sm:px-8 mx-auto space-y-8">
+    <section>
       <H1>Blog</H1>
       {allBlogs
         .sort((a, b) => {
