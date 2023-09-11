@@ -26,12 +26,12 @@ export default async function Project() {
       <H1>Projects</H1>
       <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
         {projects.map((project) => (
-          <Button
-            variant="secondary"
-            key={project._id}
-            className="hover:border-primary border-transparent border justify-start text-left h-auto w-auto p-auto"
-          >
-            <Link href={`/projects/${project.slug}`}>
+          <Link href={`/projects/${project.slug}`}>
+            <Button
+              variant="secondary"
+              key={project._id}
+              className="hover:border-primary border-transparent border justify-start text-left h-auto w-auto p-auto"
+            >
               <div className="flex flex-row py-2 items-center gap-x-4 rounded-lg ease-in-out">
                 <Image
                   src={project.logo}
@@ -47,8 +47,8 @@ export default async function Project() {
                   </div>
                 </div>
               </div>
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         ))}
       </section>
     </main>
