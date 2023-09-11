@@ -4,6 +4,7 @@ import { allBlogs } from '@/contentlayer/generated';
 import ViewCounter from './view-counter';
 import { getViewsCount } from '@/lib/db/metrics';
 import { H1 } from '@/components/ui/h1';
+import { P } from '@/components/ui/p';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -30,9 +31,9 @@ export default async function BlogPage() {
             href={`/blog/${post.slug}`}
           >
             <div className="w-full flex flex-col">
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+              <P className="text-neutral-900 dark:text-neutral-100 tracking-tight">
                 {post.title}
-              </p>
+              </P>
               <ViewCounter
                 allViews={allViews}
                 slug={post.slug}
