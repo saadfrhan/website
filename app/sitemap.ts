@@ -17,14 +17,16 @@ export default async function sitemap() {
     await client.fetch(
       groq`*[_type == "project"]{
       _updatedAt,
-      slug
+      "slug": slug.current
     }`
     );
 
   const projects = (await getProjectsSitemapInformation()).map((project) => ({
     url: `https://saadfarhan.vercel.app/projects/${project.slug}`,
-    lastModified: project._updatedAt,
+    lastModified: project._updatedAt.split('T')[0],
   }));
+
+  console.log(projects);
 
   const routes = ['', '/blog', '/about', '/projects'].map((route) => ({
     url: `https://saadfarhan.vercel.app${route}`,
