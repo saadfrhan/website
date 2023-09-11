@@ -42,7 +42,7 @@ export default async function Home() {
         <div key={profile._id} className="max-w-2xl space-y-4">
           <H1>{profile.headline}</H1>
           <p className="text-base leading-relaxed">{profile.bio}</p>
-          <div className="flex items-center gap-x-2">
+          <div className="flex items-center flex-wrap gap-x-2">
             <TooltipProvider>
               {Object.entries(profile.socialLinks)
                 .sort()

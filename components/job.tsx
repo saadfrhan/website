@@ -7,7 +7,7 @@ export default async function Job() {
   const jobs: Job[] = await getJob();
 
   return (
-    <section className="w-fit max-sm:px-4 mx-auto space-y-8">
+    <section className="w-fit mx-auto space-y-8">
       <div>
         <H2>Work Experience</H2>
       </div>
@@ -16,7 +16,7 @@ export default async function Job() {
         {jobs.map((data) => (
           <div
             key={data._id}
-            className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[4.5rem] before:left-7 before:w-[1px] before:h-[calc(100%-50px)] before:bg-zinc-800"
+            className="flex flex-col items-start lg:gap-x-6 gap-y-4 max-w-2xl relative"
           >
             <a
               href={data.url}

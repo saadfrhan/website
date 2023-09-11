@@ -18,10 +18,7 @@ export default function ThemeToggler() {
   };
 
   return (
-    <div className="group flex gap-4 items-center">
-      <p className="text-background text-sm group-hover:text-foreground">
-        {theme.charAt(0).toUpperCase() + theme.slice(1)}
-      </p>
+    <div className="flex gap-4 items-center">
       <Button
         variant="ghost"
         size="icon"
