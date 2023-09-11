@@ -31,7 +31,7 @@ export default async function Home() {
   const icons = [Github, Linkedin, Twitter];
 
   return (
-    <main className="w-full px-4 mx-auto ">
+    <main className="w-full px-4 sm:px-8 mx-auto ">
       <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 mb-16">
         {profile &&
           profile.map((data) => (

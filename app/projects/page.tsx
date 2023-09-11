@@ -22,7 +22,7 @@ export default async function Project() {
   const projects: ProjectType[] = await getProjects();
 
   return (
-    <main className="w-full px-4 mx-auto space-y-8">
+    <main className="w-full px-4 sm:px-8 mx-auto space-y-8">
       <H1>Projects</H1>
       <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
         {projects.map((project) => (

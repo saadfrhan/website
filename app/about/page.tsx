@@ -36,7 +36,7 @@ export default async function About() {
   const profile: Profile[] = await getMainProfileData();
 
   return (
-    <main className="w-full px-4 mx-auto ">
+    <main className="w-full px-4 sm:px-8 mx-auto ">
       {profile &&
         profile.map((data) => (
           <div key={data._id}>

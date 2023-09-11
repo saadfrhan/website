@@ -83,7 +83,7 @@ export default async function Project({ params }: Props) {
   const project: ProjectType = await getProject(slug);
 
   return (
-    <main className="w-full px-4 mx-auto ">
+    <main className="w-full px-4 sm:px-8 mx-auto ">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <H1>{project.title}</H1>
