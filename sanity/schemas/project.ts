@@ -2,7 +2,7 @@ import { Briefcase } from 'lucide-react';
 import {
   defineArrayMember as arrayMember,
   defineField as field,
-  defineType as type
+  defineType as type,
 } from 'sanity';
 
 export default type({
@@ -17,14 +17,14 @@ export default type({
       title: 'Title',
       type: 'string',
       description: 'The title of the project',
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'tagline',
       title: 'Tagline',
       type: 'string',
       description: 'A short description of the project',
-      validation: (rule) => rule.max(60).required(),
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'slug',
@@ -34,7 +34,7 @@ export default type({
       options: {
         source: 'title',
       },
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'logo',
@@ -42,14 +42,14 @@ export default type({
       type: 'image',
       description: 'The logo of the project',
       options: { hotspot: true },
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'url',
       title: 'URL',
       type: 'url',
       description: 'The URL of the project',
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'coverImage',
@@ -62,9 +62,9 @@ export default type({
           name: 'alt',
           title: 'Alternative Text',
           type: 'string',
-        })
+        }),
       ],
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'description',
@@ -76,7 +76,7 @@ export default type({
           type: 'block',
         }),
       ],
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
-  ]
-});      
+  ],
+});
