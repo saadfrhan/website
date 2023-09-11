@@ -7,7 +7,7 @@ export default async function Job() {
   const jobs: Job[] = await getJob();
 
   return (
-    <section className="mt-32 space-y-8">
+    <section className="w-fit max-sm:px-4 mx-auto space-y-8">
       <div>
         <H2>Work Experience</H2>
       </div>
