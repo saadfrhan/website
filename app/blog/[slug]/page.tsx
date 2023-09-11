@@ -6,6 +6,7 @@ import Balancer from 'react-wrap-balancer';
 import ViewCounter from '../view-counter';
 import { getViewsCount } from '@/lib/db/metrics';
 import { Suspense } from 'react';
+import { P } from '@/components/ui/p';
 
 export async function generateMetadata({
   params,
@@ -108,9 +109,9 @@ export default async function Blog({
         <Balancer>{post.title}</Balancer>
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-muted-foreground">
+        <P className="text-sm text-muted-foreground">
           {formatDate(post.publishedAt)}
-        </p>
+        </P>
         <Suspense>
           <Views slug={post.slug} />
         </Suspense>

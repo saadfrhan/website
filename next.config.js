@@ -14,6 +14,12 @@ const nextConfig = {
         port: '',
         pathname: `/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/**`,
       },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+        port: '',
+        pathname: `/profile_images/**`,
+      },
     ],
   },
   experimental: {

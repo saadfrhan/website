@@ -1,5 +1,6 @@
 'use client';
 
+import { P } from '@/components/ui/p';
 import { useEffect } from 'react';
 
 export default function Error({
@@ -16,7 +17,7 @@ export default function Error({
 
   return (
     <div>
-      <p>Oh no, something went wrong... maybe refresh?</p>
+      <P>Oh no, something went wrong... maybe refresh?</P>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import Job from '@/components/job';
 import { Profile } from '@/sanity/schemas/types/profile';
 import {
   AiFillGithub as Github,
@@ -12,6 +11,9 @@ import { groq } from 'next-sanity';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { TooltipWrapper } from '@/lib/utils';
 import { FileText, Mail } from 'lucide-react';
+import { P } from '@/components/ui/p';
+import ProjectCards from '@/components/project-cards';
+import { H2 } from '@/components/ui/h2';
 
 async function getBasicProfileData() {
   return await client.fetch(
@@ -27,8 +29,23 @@ async function getBasicProfileData() {
   );
 }
 
+async function getProjects() {
+  return client.fetch(
+    groq`*[_type == "project"]{
+      _id,
+      title,
+      "slug": slug.current,
+      tagline,
+      demoURL,
+      tech,
+      repoURL
+    }`
+  );
+}
+
 export default async function Home() {
   const profile: Profile = await getBasicProfileData();
+  const projects = await getProjects();
 
   const icons = [
     { icon: Github, label: 'GitHub' },
@@ -37,11 +54,11 @@ export default async function Home() {
   ];
 
   return (
-    <main>
-      <section className="flex xl:items-center items-start xl:justify-center justify-between mb-16">
-        <div key={profile._id} className="max-w-2xl space-y-4">
+    <main className="space-y-6">
+      <section className="flex xl:items-center items-start xl:justify-center justify-between">
+        <div key={profile._id} className="space-y-4">
           <H1>{profile.headline}</H1>
-          <p className="text-base leading-relaxed">{profile.bio}</p>
+          <P className="text-base leading-relaxed">{profile.bio}</P>
           <div className="flex items-center flex-wrap gap-x-2">
             <TooltipProvider>
               {Object.entries(profile.socialLinks)
@@ -91,7 +108,15 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <Job />
+      <section className="space-y-4">
+        <H2>Projects</H2>
+        <div className="space-y-4">
+          <P className="max-w-lg">
+            I love building things. Here are a few of my projects.
+          </P>
+        </div>
+        <ProjectCards projects={projects} />
+      </section>
     </main>
   );
 }
