@@ -8,8 +8,22 @@ import {
 } from 'react-icons/ai';
 import { createElement } from 'react';
 import { buttonVariants } from '@/components/ui/button';
-import { getBasicProfileData } from '@/sanity/queries';
 import { H1 } from '@/components/ui/h1';
+import client from '@/sanity/config';
+import { groq } from 'next-sanity';
+
+async function getBasicProfileData() {
+  return await client.fetch(
+    groq`*[_type == "profile"]{
+      _id,
+      fullName,
+      headline,
+      bio,
+      email,
+      socialLinks,
+    }`
+  );
+}
 
 export default async function Home() {
   const profile: Profile[] = await getBasicProfileData();
@@ -17,7 +31,7 @@ export default async function Home() {
   const icons = [Github, Linkedin, Twitter];
 
   return (
-    <main className="w-full px-8 mx-auto ">
+    <main className="w-full px-4 mx-auto ">
       <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 mb-16">
         {profile &&
           profile.map((data) => (

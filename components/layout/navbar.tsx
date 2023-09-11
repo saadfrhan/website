@@ -5,7 +5,7 @@ import ThemeToggler from '../theme-toggler';
 export default function Navbar() {
   return (
     <header className="md:py-6 py-3 border-b border z-30">
-      <div className="w-full px-8 mx-auto flex items-center justify-between">
+      <div className="w-full px-4 mx-auto flex items-center justify-between">
         <div className="flex items-center gap-x-4 md:gap-x-8">
           <Link href="/">
             <Logo />

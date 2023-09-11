@@ -1,13 +1,26 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { PortableText } from '@portabletext/react';
-import fallBackImage from 'public/project.png';
-import { getSingleProject } from '@/sanity/queries';
+import fallBackImage from '/public/project.png';
 import { ProjectType } from '@/sanity/schemas/types/project';
 import { H2 } from '@/components/ui/h2';
 import { buttonVariants } from '@/components/ui/button';
 import { H1 } from '@/components/ui/h1';
 import client from '@/sanity/config';
+import { groq } from 'next-sanity';
+
+async function getProject(slug: string) {
+  return client.fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]{
+      title,
+      url,
+      coverImage { alt, "image": asset->url },
+      description,
+      _type
+    }`,
+    { slug }
+  );
+}
 
 type Props = {
   params: {
@@ -53,12 +66,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+export async function generateStaticParams() {
+  const projects: ProjectType[] = await client.fetch(
+    groq`*[_type == "project"]{
+      "slug": slug.current,
+    }`
+  );
+
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
 export default async function Project({ params }: Props) {
   const slug = params.project;
-  const project: ProjectType = await getSingleProject(slug);
+  const project: ProjectType = await getProject(slug);
 
   return (
-    <main className="w-full px-8 mx-auto ">
+    <main className="w-full px-4 mx-auto ">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <H1>{project.title}</H1>

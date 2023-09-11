@@ -2,10 +2,11 @@ import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { File, Mail } from 'lucide-react';
 import { Profile } from '@/sanity/schemas/types/profile';
-import { getMainProfileData } from '@/sanity/queries';
 import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { H2 } from '@/components/ui/h2';
+import client from '@/sanity/config';
+import { groq } from 'next-sanity';
 
 export const metadata = {
   title: 'About',
@@ -13,11 +14,29 @@ export const metadata = {
     'Saad Farhan, your Jamstack wizard in Karachi, crafting the future of web development with expertise in JavaScript frameworks and a commitment to quality. 🚀🌟',
 };
 
+async function getMainProfileData() {
+  return client.fetch(
+    groq`*[_type == "profile"]{
+      _id,
+      fullName,
+      profileImage {
+        alt, 
+        "image": asset->url
+      },
+      address,
+      fullBio,
+      email,
+      resumeURL,
+      skills
+    }`
+  );
+}
+
 export default async function About() {
   const profile: Profile[] = await getMainProfileData();
 
   return (
-    <main className="w-full px-8 mx-auto ">
+    <main className="w-full px-4 mx-auto ">
       {profile &&
         profile.map((data) => (
           <div key={data._id}>
