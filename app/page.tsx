@@ -55,11 +55,11 @@ export default async function Home() {
 
   return (
     <main className="space-y-6">
-      <section className="flex xl:items-center items-start xl:justify-center justify-between">
+      <section className="flex items-start justify-between xl:items-center xl:justify-center">
         <div key={profile._id} className="space-y-4">
           <H1>{profile.headline}</H1>
           <P className="text-base leading-relaxed">{profile.bio}</P>
-          <div className="flex items-center flex-wrap gap-x-2">
+          <div className="flex flex-wrap items-center gap-x-2">
             <TooltipProvider>
               {Object.entries(profile.socialLinks)
                 .sort()

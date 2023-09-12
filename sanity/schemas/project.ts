@@ -37,14 +37,14 @@ export default type({
       validation: (rule) => rule.required(),
     }),
     field({
-      name: 'demoUrl',
+      name: 'demoURL',
       title: 'Demo URL',
       type: 'url',
       description: 'The Demo URL of the project',
       validation: (rule) => rule.required(),
     }),
     field({
-      name: 'repoUrl',
+      name: 'repoURL',
       title: 'Repository URL',
       type: 'url',
       description: 'The Repostory URL of the project',

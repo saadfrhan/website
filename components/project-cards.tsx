@@ -8,7 +8,7 @@ import {
 } from './ui/card';
 import { TooltipProvider } from './ui/tooltip';
 import Image, { StaticImageData } from 'next/image';
-import { Button, buttonVariants } from './ui/button';
+import { buttonVariants } from './ui/button';
 import NextjsIcon from '/public/icons/Nextjs.png';
 import SanityIcon from '/public/icons/Sanity.png';
 import ClerkDevIcon from '/public/icons/ClerkDev.png';
@@ -33,18 +33,21 @@ export default function ProjectCards({
 }: {
   projects: ProjectType[];
 }) {
+  console.log(projects[0].demoURL);
+  console.log(projects[0].repoURL);
+
   return (
     <p className="mt-4 space-y-4">
       {projects.map((project) => (
         <Card
           key={project._id}
-          className="justify-start text-left h-auto w-auto p-auto"
+          className="justify-start w-auto h-auto text-left p-auto"
         >
           <CardHeader>
             <CardTitle>{project.title}</CardTitle>
             <CardDescription>{project.tagline}</CardDescription>
           </CardHeader>
-          <CardFooter className="flex justify-between gap-4 max-sm:flex-col max-sm:items-start items-end">
+          <CardFooter className="flex items-end justify-between gap-4 max-sm:flex-col max-sm:items-start">
             <div className="flex gap-2">
               <TooltipProvider>
                 {project.tech.map((tech) => (
@@ -59,12 +62,13 @@ export default function ProjectCards({
                 ))}
               </TooltipProvider>
             </div>
-            <div className="space-x-4 flex">
+            <div className="flex space-x-4">
               <a
                 href={project.repoURL}
                 rel="noreferer noopener"
                 className={buttonVariants({
                   variant: 'secondary',
+                  className: 'cursor-pointer',
                 })}
               >
                 REPO
@@ -74,6 +78,7 @@ export default function ProjectCards({
                 rel="noreferer noopener"
                 className={buttonVariants({
                   variant: 'secondary',
+                  className: 'cursor-pointer',
                 })}
               >
                 WEBSITE
