@@ -8,7 +8,7 @@ import {
 } from './ui/card';
 import { TooltipProvider } from './ui/tooltip';
 import Image, { StaticImageData } from 'next/image';
-import { Button } from './ui/button';
+import { Button, buttonVariants } from './ui/button';
 import NextjsIcon from '/public/icons/Nextjs.png';
 import SanityIcon from '/public/icons/Sanity.png';
 import ClerkDevIcon from '/public/icons/ClerkDev.png';
@@ -60,8 +60,24 @@ export default function ProjectCards({
               </TooltipProvider>
             </div>
             <div className="space-x-4 flex">
-              <Button variant="secondary">REPO</Button>
-              <Button variant="secondary">WEBSITE</Button>
+              <a
+                href={project.repoURL}
+                rel="noreferer noopener"
+                className={buttonVariants({
+                  variant: 'secondary',
+                })}
+              >
+                REPO
+              </a>
+              <a
+                href={project.demoURL}
+                rel="noreferer noopener"
+                className={buttonVariants({
+                  variant: 'secondary',
+                })}
+              >
+                WEBSITE
+              </a>
             </div>
           </CardFooter>
         </Card>
