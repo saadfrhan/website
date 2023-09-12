@@ -36,6 +36,7 @@ async function getProjects() {
       title,
       "slug": slug.current,
       tagline,
+      _type,
       demoURL,
       tech,
       repoURL
