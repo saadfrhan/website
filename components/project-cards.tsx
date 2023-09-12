@@ -69,7 +69,6 @@ export default function ProjectCards({
                 rel="noreferer noopener"
                 className={buttonVariants({
                   variant: 'secondary',
-                  className: 'cursor-pointer',
                 })}
               >
                 Code
@@ -79,7 +78,6 @@ export default function ProjectCards({
                 rel="noreferer noopener"
                 className={buttonVariants({
                   variant: 'secondary',
-                  className: 'cursor-pointer',
                 })}
               >
                 Demo

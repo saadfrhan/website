@@ -1,6 +1,4 @@
-import Logo from '@/icons/logo';
 import Link from 'next/link';
-import ThemeToggler from '../theme-toggler';
 
 export default function Navbar() {
   return (
@@ -27,7 +25,6 @@ export default function Navbar() {
             </ul>
           </nav>
         </div>
-        <ThemeToggler />
       </div>
     </header>
   );
