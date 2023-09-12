@@ -33,9 +33,6 @@ export default function ProjectCards({
 }: {
   projects: ProjectType[];
 }) {
-  console.log(projects[0].demoURL);
-  console.log(projects[0].repoURL);
-
   return (
     <p className="mt-4 space-y-4">
       {projects.map((project) => (
@@ -43,12 +40,16 @@ export default function ProjectCards({
           key={project._id}
           className="justify-start w-auto h-auto text-left p-auto"
         >
-          <CardHeader>
-            <CardTitle>{project.title}</CardTitle>
-            <CardDescription>{project.tagline}</CardDescription>
+          <CardHeader className="p-2">
+            <CardTitle className="p-2 pt-1 text-lg font-bold">
+              {project.title}
+            </CardTitle>
+            <CardDescription className="pl-2">
+              {project.tagline}
+            </CardDescription>
           </CardHeader>
-          <CardFooter className="flex items-end justify-between gap-4 max-sm:flex-col max-sm:items-start">
-            <div className="flex gap-2">
+          <CardFooter className="flex items-end p-0 justify-between gap-4 max-sm:flex-col max-sm:items-start">
+            <div className="flex gap-2 pl-4 pb-4">
               <TooltipProvider>
                 {project.tech.map((tech) => (
                   <TooltipWrapper key={tech} label={tech}>
@@ -62,7 +63,7 @@ export default function ProjectCards({
                 ))}
               </TooltipProvider>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 p-4">
               <a
                 href={project.repoURL}
                 rel="noreferer noopener"
@@ -71,7 +72,7 @@ export default function ProjectCards({
                   className: 'cursor-pointer',
                 })}
               >
-                REPO
+                Code
               </a>
               <a
                 href={project.demoURL}
@@ -81,7 +82,7 @@ export default function ProjectCards({
                   className: 'cursor-pointer',
                 })}
               >
-                WEBSITE
+                Demo
               </a>
             </div>
           </CardFooter>

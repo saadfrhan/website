@@ -7,6 +7,7 @@ import client from '@/sanity/config';
 import { groq } from 'next-sanity';
 import { H1 } from '@/components/ui/h1';
 import { P } from '@/components/ui/p';
+import Me from '/public/me.png';
 
 export const metadata = {
   title: 'About',
@@ -36,22 +37,13 @@ export default async function About() {
             <section className="space-y-4">
               <div className="space-y-3">
                 <Image
-                  src="https://pbs.twimg.com/profile_images/1693998394971443200/u1Ot12Xn_400x400.jpg"
+                  src={Me}
                   alt="Saad Farhan"
                   width={120}
                   height={120}
                   className="rounded-full"
                 />
-                <div>
-                  <h3 className="font-extrabold text-xl">Saad Farhan</h3>
-                  <a
-                    href="https://twitter.com/saadfarhan547"
-                    rel="noreferer noopener"
-                    className="text-muted-foreground hover:underline"
-                  >
-                    @saadfarhan547
-                  </a>
-                </div>
+                <h3 className="font-extrabold text-xl">Saad Farhan</h3>
               </div>
               <H1>I&apos;m {data.fullName}.</H1>
 

@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react';
 import { increment } from '@/server-actions/increment-view';
-import { P } from '@/components/ui/p';
 
 export default function ViewCounter({
   slug,
@@ -28,8 +27,8 @@ export default function ViewCounter({
   const views = number.toLocaleString();
 
   return (
-    <P className="text-muted-foreground">
+    <p className="text-muted-foreground">
       {`${views} view${views === '1' ? '' : 's'}`}
-    </P>
+    </p>
   );
 }

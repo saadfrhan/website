@@ -109,9 +109,9 @@ export default async function Blog({
         <Balancer>{post.title}</Balancer>
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <P className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           {formatDate(post.publishedAt)}
-        </P>
+        </p>
         <Suspense>
           <Views slug={post.slug} />
         </Suspense>
