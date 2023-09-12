@@ -2,8 +2,8 @@ import { Profile } from '@/sanity/schemas/types/profile';
 import {
   AiFillGithub as Github,
   AiFillLinkedin as Linkedin,
-  AiOutlineTwitter as Twitter,
 } from 'react-icons/ai';
+import { BsDiscord as Discord } from 'react-icons/bs';
 import { buttonVariants } from '@/components/ui/button';
 import { H1 } from '@/components/ui/h1';
 import client from '@/sanity/config';
@@ -18,12 +18,12 @@ import { H2 } from '@/components/ui/h2';
 async function getBasicProfileData() {
   return await client.fetch(
     groq`*[_type == "profile"][0]{
-      _id,
       headline,
       bio,
       email,
       socialLinks,
       resumeURL,
+      _type,
       email
     }`
   );
@@ -48,9 +48,9 @@ export default async function Home() {
   const projects = await getProjects();
 
   const icons = [
+    { icon: Discord, label: 'Discord' },
     { icon: Github, label: 'GitHub' },
     { icon: Linkedin, label: 'LinkedIn' },
-    { icon: Twitter, label: 'Twitter' },
   ];
 
   return (

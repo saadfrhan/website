@@ -2,7 +2,7 @@ import { User } from 'lucide-react';
 import {
   defineArrayMember as arrayMember,
   defineField as field,
-  defineType as type
+  defineType as type,
 } from 'sanity';
 
 export default type({
@@ -17,47 +17,25 @@ export default type({
       title: 'Full Name',
       type: 'string',
       description: 'Your full name',
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
     field({
       name: 'headline',
       title: 'Headline',
       type: 'string',
       description: 'A short description of yourself',
-      validation: (rule) => rule.required()
-    }),
-    field({
-      name: 'profileImage',
-      title: 'Profile Image',
-      type: 'image',
-      description: 'A picture of yourself',
-      options: { hotspot: true },
       validation: (rule) => rule.required(),
-      fields: [
-        field({
-          name: 'alt',
-          title: 'Alternative Text',
-          type: 'string',
-          validation: (rule) => rule.required()
-        })
-      ]
     }),
     field({
       name: 'bio',
       title: 'Bio',
       type: 'string',
       validation: (rule) => rule.required(),
-      description: 'A longer description of yourself'
+      description: 'A longer description of yourself',
     }),
     field({
       name: 'email',
       title: 'Email adress',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    field({
-      name: 'address',
-      title: 'Address',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -91,26 +69,26 @@ export default type({
           name: 'github',
           title: 'Github',
           type: 'url',
-          initialValue: 'https://github.com/'
+          initialValue: 'https://github.com/',
         }),
         field({
           name: 'linkedin',
           title: 'LinkedIn',
           type: 'url',
-          initialValue: 'https://linkedin.com/in/'
+          initialValue: 'https://linkedin.com/in/',
         }),
         field({
-          name: 'x',
-          title: 'X',
+          name: 'discord',
+          title: 'Discord',
           type: 'url',
-          initialValue: 'https://x.com/'
+          initialValue: 'https://discordapp.com/users/',
         }),
       ],
       options: {
         collapsible: true,
         collapsed: false,
-        columns: 2
-      }
+        columns: 2,
+      },
     }),
     field({
       name: 'skills',
@@ -120,9 +98,9 @@ export default type({
       of: [
         arrayMember({
           type: 'string',
-        })
+        }),
       ],
-      validation: (rule) => rule.required()
+      validation: (rule) => rule.required(),
     }),
-  ]
-})
+  ],
+});

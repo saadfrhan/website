@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import { File, Mail } from 'lucide-react';
 import { Profile } from '@/sanity/schemas/types/profile';
-import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { H2 } from '@/components/ui/h2';
 import client from '@/sanity/config';
@@ -21,10 +19,7 @@ async function getMainProfileData() {
     groq`*[_type == "profile"]{
       _id,
       fullName,
-      address,
       fullBio,
-      email,
-      resumeURL,
       skills
     }`
   );
@@ -45,7 +40,6 @@ export default async function About() {
                   alt="Saad Farhan"
                   width={120}
                   height={120}
-                  // facebook like profile picture
                   className="rounded-full"
                 />
                 <div>
@@ -59,10 +53,7 @@ export default async function About() {
                   </a>
                 </div>
               </div>
-              <H1>
-                I&apos;m {data.fullName}. I live in {data.address}, where I
-                design the future.
-              </H1>
+              <H1>I&apos;m {data.fullName}.</H1>
 
               <div className="flex flex-col gap-y-3 leading-relaxed">
                 <PortableText
@@ -78,8 +69,8 @@ export default async function About() {
               </div>
             </section>
 
-            <section className="max-w-2xl space-y-8">
-              <h1 className="font-bold text-2xl tracking-tighter">Expertise</h1>
+            <section className="max-w-2xl space-y-4">
+              <H2>Expertise</H2>
               <div className="space-y-4">
                 <P className="max-w-lg">
                   I&apos;ve spent few years working on my skills. In no

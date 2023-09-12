@@ -19,6 +19,11 @@ export default function Navbar() {
                   About
                 </Link>
               </li>
+              <li>
+                <Link href="/blog" className="hover:text-primary duration-300">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
