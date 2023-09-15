@@ -34,12 +34,11 @@ async function getProjects() {
     groq`*[_type == "project"]{
       _id,
       title,
-      "slug": slug.current,
       tagline,
-      _type,
       demoURL,
       tech,
-      repoURL
+      repoURL,
+      _type
     }`
   );
 }

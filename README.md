@@ -5,7 +5,6 @@
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) & [shadcn/ui](https://ui.shadcn.com)
 - **Content Management**: [Sanity](https://sanity.io)
-- **Database**: [PlanetScale](https://planetscale.com)
 - **Deployment**: [Vercel](https://vercel.com)
 
 ## Running Locally

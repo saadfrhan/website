@@ -14,7 +14,9 @@ import SanityIcon from '/public/icons/Sanity.png';
 import ClerkDevIcon from '/public/icons/ClerkDev.png';
 import TypeScriptIcon from '/public/icons/TypeScript.png';
 import VercelIcon from '/public/icons/Vercel.png';
-import PlanetscaleIcon from '/public/icons/Planetscale.png';
+import MDXIcon from '/public/icons/MDX.png';
+import TailwindcssIcon from '/public/icons/TailwindCSS.png';
+import ShadcnUIIcon from '/public/icons/shadcn-ui.png';
 import { ProjectType } from '@/sanity/schemas/types/project';
 
 const icons: {
@@ -25,6 +27,9 @@ const icons: {
   'Vercel Postgres': VercelIcon,
   Sanity: SanityIcon,
   Clerk: ClerkDevIcon,
+  MDX: MDXIcon,
+  TailwindCSS: TailwindcssIcon,
+  'shadcn/ui': ShadcnUIIcon,
 };
 
 export default function ProjectCards({
@@ -37,7 +42,7 @@ export default function ProjectCards({
       {projects.map((project) => (
         <Card
           key={project._id}
-          className="justify-start w-auto h-auto text-left p-auto"
+          className="justify-start w-auto h-auto text-left p-auto flex flex-col max-sm:gap-y-2"
         >
           <CardHeader className="p-2">
             <CardTitle className="p-2 pt-1 text-lg font-bold">
@@ -47,7 +52,7 @@ export default function ProjectCards({
               {project.tagline}
             </CardDescription>
           </CardHeader>
-          <CardFooter className="flex items-end p-0 justify-between gap-4 max-sm:flex-col max-sm:items-start">
+          <CardFooter className="flex items-end p-0 justify-between gap-x-4 max-sm:flex-col max-sm:items-start">
             <div className="flex gap-2 pl-4 pb-4">
               <TooltipProvider>
                 {project.tech.map((tech) => (
@@ -62,7 +67,7 @@ export default function ProjectCards({
                 ))}
               </TooltipProvider>
             </div>
-            <div className="flex space-x-4 p-4">
+            <div className="flex space-x-4 p-4 max-sm:pt-1">
               <a
                 href={project.repoURL}
                 rel="noreferer noopener"
