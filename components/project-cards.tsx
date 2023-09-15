@@ -23,7 +23,6 @@ const icons: {
   TypeScript: TypeScriptIcon,
   'Next.js': NextjsIcon,
   'Vercel Postgres': VercelIcon,
-  Planetscale: PlanetscaleIcon,
   Sanity: SanityIcon,
   Clerk: ClerkDevIcon,
 };

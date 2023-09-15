@@ -35,16 +35,13 @@ export default async function About() {
         profile.map((data) => (
           <div key={data._id} className="space-y-6">
             <section className="space-y-4">
-              <div className="space-y-3">
-                <Image
-                  src={Me}
-                  alt="Saad Farhan"
-                  width={120}
-                  height={120}
-                  className="rounded-full"
-                />
-                <h3 className="font-extrabold text-xl">Saad Farhan</h3>
-              </div>
+              <Image
+                src={Me}
+                alt="Saad Farhan"
+                width={120}
+                height={120}
+                className="rounded-full"
+              />
               <H1>I&apos;m {data.fullName}.</H1>
 
               <div className="flex flex-col gap-y-3 leading-relaxed">
