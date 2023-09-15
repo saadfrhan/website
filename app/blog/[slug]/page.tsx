@@ -3,10 +3,6 @@ import { notFound } from 'next/navigation';
 import { Mdx } from '@/components/mdx';
 import { allBlogs } from '@/contentlayer/generated';
 import Balancer from 'react-wrap-balancer';
-import ViewCounter from '../view-counter';
-import { getViewsCount } from '@/lib/db/metrics';
-import { Suspense } from 'react';
-import { P } from '@/components/ui/p';
 
 export async function generateMetadata({
   params,
@@ -108,25 +104,12 @@ export default async function Blog({
       <h1 className="font-bold text-2xl tracking-tighter">
         <Balancer>{post.title}</Balancer>
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-muted-foreground">
           {formatDate(post.publishedAt)}
         </p>
-        <Suspense>
-          <Views slug={post.slug} />
-        </Suspense>
       </div>
       <Mdx code={post.body.code} />
     </section>
   );
-}
-
-async function Views({ slug }: { slug: string }) {
-  let views: any;
-  try {
-    views = await getViewsCount();
-  } catch (error) {
-    console.error(error);
-  }
-  return <ViewCounter allViews={views} slug={slug} trackView />;
 }
