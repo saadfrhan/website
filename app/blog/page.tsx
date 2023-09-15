@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { allBlogs } from '@/contentlayer/generated';
-import { getViewsCount } from '@/lib/db/metrics';
 import { H1 } from '@/components/ui/h1';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -11,8 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const allViews = await getViewsCount();
-
   return (
     <section className="space-y-6 flex-col w-full flex">
       <H1>Blog</H1>
