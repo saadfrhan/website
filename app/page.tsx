@@ -23,7 +23,6 @@ async function getBasicProfileData() {
       email,
       socialLinks,
       resumeURL,
-      _type,
       email
     }`
   );
@@ -37,8 +36,7 @@ async function getProjects() {
       tagline,
       demoURL,
       tech,
-      repoURL,
-      _type
+      repoURL
     }`
   );
 }
@@ -108,13 +106,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="space-y-4">
+      <section className="space-y-6">
         <H2>Projects</H2>
-        <div className="space-y-4">
-          <P className="max-w-lg">
-            I love building things. Here are a few of my projects.
-          </P>
-        </div>
         <ProjectCards projects={projects} />
       </section>
     </main>

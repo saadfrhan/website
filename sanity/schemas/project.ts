@@ -41,7 +41,6 @@ export default type({
       title: 'Demo URL',
       type: 'url',
       description: 'The Demo URL of the project',
-      validation: (rule) => rule.required(),
     }),
     field({
       name: 'repoURL',

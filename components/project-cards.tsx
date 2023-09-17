@@ -17,6 +17,11 @@ import VercelIcon from '/public/icons/Vercel.png';
 import MDXIcon from '/public/icons/MDX.png';
 import TailwindcssIcon from '/public/icons/TailwindCSS.png';
 import ShadcnUIIcon from '/public/icons/shadcn-ui.png';
+import MongoDBIcon from '/public/icons/MongoDB.png';
+import ExpressIcon from '/public/icons/express.png';
+import ReduxIcon from '/public/icons/redux.png';
+import ReactIcon from '/public/icons/React.png';
+import NodejsIcon from '/public/icons/Nodejs.png';
 import { ProjectType } from '@/sanity/schemas/types/project';
 
 const icons: {
@@ -30,6 +35,11 @@ const icons: {
   MDX: MDXIcon,
   TailwindCSS: TailwindcssIcon,
   'shadcn/ui': ShadcnUIIcon,
+  MongoDB: MongoDBIcon,
+  'Express.js': ExpressIcon,
+  'RTK Query': ReduxIcon,
+  React: ReactIcon,
+  'Node.js': NodejsIcon,
 };
 
 export default function ProjectCards({
@@ -57,12 +67,14 @@ export default function ProjectCards({
               <TooltipProvider>
                 {project.tech.map((tech) => (
                   <TooltipWrapper key={tech} label={tech}>
-                    <Image
-                      src={icons[tech]}
-                      alt={tech}
-                      width={16}
-                      height={16}
-                    />
+                    <div className="bg-white w-[22px] h-[22px] flex items-center justify-center rounded-full">
+                      <Image
+                        src={icons[tech]}
+                        alt={tech}
+                        width={16}
+                        height={16}
+                      />
+                    </div>
                   </TooltipWrapper>
                 ))}
               </TooltipProvider>
@@ -77,15 +89,17 @@ export default function ProjectCards({
               >
                 Code
               </a>
-              <a
-                href={project.demoURL}
-                rel="noreferer noopener"
-                className={buttonVariants({
-                  variant: 'secondary',
-                })}
-              >
-                Demo
-              </a>
+              {project.demoURL && (
+                <a
+                  href={project.demoURL}
+                  rel="noreferer noopener"
+                  className={buttonVariants({
+                    variant: 'secondary',
+                  })}
+                >
+                  Demo
+                </a>
+              )}
             </div>
           </CardFooter>
         </Card>
