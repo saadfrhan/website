@@ -6,7 +6,6 @@
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) & [shadcn/ui](https://ui.shadcn.com)
 - **Content Management**: [Sanity](https://sanity.io)
 - **Deployment**: [Vercel](https://vercel.com)
-
 ## Running Locally
 
 ```bash

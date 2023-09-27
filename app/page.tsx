@@ -1,72 +1,29 @@
-import { Profile } from '@/sanity/schemas/types/profile';
-import {
-  AiFillGithub as Github,
-  AiFillLinkedin as Linkedin,
-} from 'react-icons/ai';
-import { BsDiscord as Discord } from 'react-icons/bs';
 import { buttonVariants } from '@/components/ui/button';
 import { H1 } from '@/components/ui/h1';
-import client from '@/sanity/config';
-import { groq } from 'next-sanity';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { TooltipWrapper } from '@/lib/utils';
-import { FileText, Mail } from 'lucide-react';
 import { P } from '@/components/ui/p';
-import ProjectCards from '@/components/project-cards';
+import ProjectCard from '@/components/project-card';
 import { H2 } from '@/components/ui/h2';
-
-async function getBasicProfileData() {
-  return await client.fetch(
-    groq`*[_type == "profile"][0]{
-      headline,
-      bio,
-      email,
-      socialLinks,
-      resumeURL,
-      email
-    }`
-  );
-}
-
-async function getProjects() {
-  return client.fetch(
-    groq`*[_type == "project"]{
-      _id,
-      title,
-      tagline,
-      demoURL,
-      tech,
-      repoURL
-    }`
-  );
-}
+import { profile, projects } from '@/lib/constants';
 
 export default async function Home() {
-  const profile: Profile = await getBasicProfileData();
-  const projects = await getProjects();
-
-  const icons = [
-    { icon: Discord, label: 'Discord' },
-    { icon: Github, label: 'GitHub' },
-    { icon: Linkedin, label: 'LinkedIn' },
-  ];
-
   return (
     <main className="space-y-6">
       <section className="flex items-start justify-between xl:items-center xl:justify-center">
-        <div key={profile._id} className="space-y-4">
+        <div className="space-y-4">
           <H1>{profile.headline}</H1>
           <P className="text-base leading-relaxed">{profile.bio}</P>
           <div className="flex flex-wrap items-center gap-x-2">
             <TooltipProvider>
-              {Object.entries(profile.socialLinks)
+              {Object.entries(profile.links)
                 .sort()
-                .map(([_, value]: any, id) => {
-                  const { icon: Icon, label } = icons[id];
+                .map(([label, value], id) => {
+                  const { icon: Icon, link } = value;
                   return (
                     <TooltipWrapper key={id} label={label}>
                       <a
-                        href={value}
+                        href={link}
                         rel="noreferer noopener"
                         className={buttonVariants({
                           size: 'icon',
@@ -78,37 +35,17 @@ export default async function Home() {
                     </TooltipWrapper>
                   );
                 })}
-              <TooltipWrapper label="My CV">
-                <a
-                  href={profile.resumeURL}
-                  rel="noreferer noopener"
-                  className={buttonVariants({
-                    size: 'icon',
-                    variant: 'ghost',
-                  })}
-                >
-                  <FileText size={24} />
-                </a>
-              </TooltipWrapper>
-              <TooltipWrapper label="Email me">
-                <a
-                  href={profile.email}
-                  rel="noreferer noopener"
-                  className={buttonVariants({
-                    size: 'icon',
-                    variant: 'ghost',
-                  })}
-                >
-                  <Mail size={24} />
-                </a>
-              </TooltipWrapper>
             </TooltipProvider>
           </div>
         </div>
       </section>
       <section className="space-y-6">
         <H2>Projects</H2>
-        <ProjectCards projects={projects} />
+        <p className="mt-4 space-y-6">
+          {projects.map((project, index) => (
+            <ProjectCard project={project} key={index} />
+          ))}
+        </p>
       </section>
     </main>
   );
