@@ -14,7 +14,7 @@ export default async function Home() {
         <div className="space-y-4">
           <H1>{profile.headline}</H1>
           <P className="text-base leading-relaxed">{profile.bio}</P>
-          <div className="flex flex-wrap items-center gap-x-2">
+          <div className="flex flex-wrap items-center">
             <TooltipProvider>
               {Object.entries(profile.links)
                 .sort()

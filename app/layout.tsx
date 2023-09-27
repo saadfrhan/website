@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     template: '%s | Saad Farhan',
   },
   description,
-  openGraph: {
-    title: 'Saad Farhan',
-    description:
-      'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.',
-    url: 'https://saadfarhan.vercel.app',
-    siteName: 'Saad Farhan',
-    locale: 'en_US',
-    type: 'website',
-  },
+  // openGraph: {
+  //   title: 'Saad Farhan',
+  //   description:
+  //     'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.',
+  //   url: 'https://saadfarhan.vercel.app',
+  //   siteName: 'Saad Farhan',
+  //   locale: 'en_US',
+  //   type: 'website',
+  // },
   robots: {
     index: true,
     follow: true,
@@ -53,9 +53,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased dark max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
+        className={`${inter.className} antialiased dark max-w-2xl flex flex-col md:flex-row mx-auto`}
       >
-        <main className="flex-auto min-w-0 mt-6 flex flex-col space-y-12 px-2 md:px-0">
+        <main className="flex-auto min-w-0 flex flex-col space-y-8 px-4 md:px-0">
           <Navbar />
           {children}
         </main>
