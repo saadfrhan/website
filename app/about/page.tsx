@@ -27,13 +27,13 @@ export default async function About() {
           <H1>I&apos;m {profile.fullName}.</H1>
 
           <p>
-            👋 Hi there! I'm your go-to Jamstack developer with a knack for
+            👋 Hi there! I&#39;m your go-to Jamstack developer with a knack for
             staying updated on the latest tech trends.
           </p>
 
           <p>
             I thrive on finding innovative solutions to tough problems through
-            hands-on experimentation. Quality is my priority, and I'm always
+            hands-on experimentation. Quality is my priority, and I&#39;m always
             eager to learn, adapt, and grow.
           </p>
 
@@ -44,7 +44,7 @@ export default async function About() {
           </p>
 
           <p>
-            I'm not only a solo achiever but also a team player, constantly
+            I&#39;m not only a solo achiever but also a team player, constantly
             striving to exceed limits and deliver top-notch outcomes.
           </p>
 
