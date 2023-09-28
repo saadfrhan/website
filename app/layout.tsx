@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 const description =
-  'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.';
+  'Application developer with coding skills & passion for staying current in the industry.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://saadfarhan.vercel.app'),
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     template: '%s | Saad Farhan',
   },
   description,
-  // openGraph: {
-  //   title: 'Saad Farhan',
-  //   description:
-  //     'Saad Farhan is an Experienced app developer with coding skills & passion for staying current in the industry.',
-  //   url: 'https://saadfarhan.vercel.app',
-  //   siteName: 'Saad Farhan',
-  //   locale: 'en_US',
-  //   type: 'website',
-  // },
+  openGraph: {
+    title: 'Saad Farhan',
+    description:
+      'Application developer with coding skills & passion for staying current in the industry.',
+    url: 'https://saadfarhan.vercel.app',
+    siteName: 'Saad Farhan',
+    locale: 'en_US',
+    type: 'website',
+  },
   robots: {
     index: true,
     follow: true,
