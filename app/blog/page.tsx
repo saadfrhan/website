@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { allBlogs } from '@/contentlayer/generated';
 import { H1 } from '@/components/ui/h1';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { P } from '@/components/ui/p';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -27,7 +28,7 @@ export default async function BlogPage() {
             href={`/blog/${post.slug}`}
           >
             <Card className="w-full flex flex-col">
-              <CardHeader className="p-4">
+              <CardHeader>
                 <CardTitle className="text-neutral-900 dark:text-neutral-100 tracking-tight">
                   {post.title}
                 </CardTitle>

@@ -15,5 +15,3 @@ cd website
 pnpm install
 pnpm dev
 ```
-
-Create a `.env` file similar to [`.env.example`](https://github.com/saadfrhan/website/blob/master/.env.example).
