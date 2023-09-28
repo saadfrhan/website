@@ -9,7 +9,7 @@ import { profile, projects } from '@/lib/constants';
 
 export default async function Home() {
   return (
-    <main className="space-y-6">
+    <main className="space-y-6 pb-8">
       <section className="flex items-start justify-between xl:items-center xl:justify-center">
         <div className="space-y-4">
           <H1>{profile.headline}</H1>

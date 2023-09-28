@@ -57,21 +57,6 @@ export const profile = {
 
 export const projects = [
   {
-    title: 'mern-bookstore',
-    tagline: 'A MERN Stack Bookstore Application',
-    tech: [
-      'TypeScript',
-      'React',
-      'MongoDB',
-      'shadcn/ui',
-      'RTK Query',
-      'Express.js',
-      'Node.js',
-    ],
-    repoURL: 'https://github.com/saadfrhan/mern-bookstore',
-    slug: 'mern-bookstore',
-  },
-  {
     title: 'fullstack-nextjs-marketplace',
     tagline: 'Clothing Shop App with Next.js',
     demoURL: 'https://fullstack-online-marketplace.vercel.app/',
@@ -84,6 +69,26 @@ export const projects = [
       'shadcn/ui',
     ],
     repoURL: 'https://github.com/saadfrhan/fullstack-nextjs-marketplace',
-    slug: 'project-2',
+  },
+  {
+    title: 'website',
+    tagline: 'My Personal Website',
+    demoURL: 'https://saadfarhan.me/',
+    tech: ['TypeScript', 'Next.js', 'TailwindCSS', 'shadcn/ui', 'MDX'],
+    repoURL: 'https://github.com/saadfrhan/website',
+  },
+  {
+    title: 'mern-bookstore',
+    tagline: 'A MERN Stack Bookstore Application',
+    tech: [
+      'TypeScript',
+      'React',
+      'MongoDB',
+      'shadcn/ui',
+      'RTK Query',
+      'Express.js',
+      'Node.js',
+    ],
+    repoURL: 'https://github.com/saadfrhan/mern-bookstore',
   },
 ];

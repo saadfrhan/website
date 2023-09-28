@@ -43,7 +43,6 @@ const icons: {
 
 interface Project {
   title: string;
-  slug: string;
   tagline: string;
   demoURL?: string;
   repoURL: string;
