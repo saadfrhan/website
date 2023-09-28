@@ -14,7 +14,7 @@ export const metadata = {
 
 export default async function About() {
   return (
-    <div className="space-y-6 prose prose-invert pb-8">
+    <div className="space-y-6 prose dark:prose-invert pb-8">
       <section className="space-y-4">
         <Image
           src={Me}
@@ -63,27 +63,6 @@ export default async function About() {
           <li>Powering up with VS Code IDE</li>
           <li>GitHub as my version control sidekick</li>
         </ul>
-      </section>
-
-      <section className="max-w-2xl space-y-4">
-        <H2>Expertise</H2>
-        <div className="space-y-4">
-          <P className="max-w-lg">
-            I&apos;ve spent few years working on my skills. In no particular
-            order, here are a few of them.
-          </P>
-
-          <div className="flex flex-wrap items-center gap-3">
-            {profile.skills.map((skill, id) => (
-              <Card
-                key={id}
-                className="hover:border-primary/50 duration-300 cursor-default px-2 py-1"
-              >
-                {skill}
-              </Card>
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );

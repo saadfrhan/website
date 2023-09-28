@@ -4,6 +4,12 @@ import { Mdx } from '@/components/mdx';
 import { allBlogs } from '@/contentlayer/generated';
 import Balancer from 'react-wrap-balancer';
 
+export async function generateStaticParams() {
+  return allBlogs.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {

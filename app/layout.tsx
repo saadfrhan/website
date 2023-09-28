@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Navbar from '@/components/layout/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -52,15 +53,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} antialiased dark max-w-2xl flex flex-col md:flex-row mx-auto`}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
       >
-        <main className="flex-auto min-w-0 flex flex-col space-y-8 px-4 md:px-0">
-          <Navbar />
-          {children}
-        </main>
-        <Analytics />
-      </body>
+        <body
+          className={`${inter.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}
+        >
+          <main className="flex-auto min-w-0 flex flex-col space-y-8 px-4 md:px-0">
+            <Navbar />
+            {children}
+          </main>
+          <Analytics />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

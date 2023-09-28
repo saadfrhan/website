@@ -1,0 +1,48 @@
+'use client';
+
+import * as React from 'react';
+import { Moon, Sun, Monitor } from 'lucide-react';
+import { useTheme } from 'next-themes';
+
+import { Button } from '@/components/ui/button';
+
+export function ThemeToggler() {
+  const { setTheme, theme = 'system' } = useTheme();
+
+  const icon: {
+    [key: string]: React.ElementType;
+  } = {
+    light: Sun,
+    dark: Moon,
+    system: Monitor,
+  };
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => {
+        if (theme === 'light') setTheme('dark');
+        else if (theme === 'dark') setTheme('system');
+        else if (theme === 'system') setTheme('light');
+      }}
+    >
+      {React.createElement(icon[theme])}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  );
+}
+
+{
+  /* <DropdownMenuContent align="end">
+  <DropdownMenuItem onClick={() => setTheme('light')}>
+    Light
+  </DropdownMenuItem>
+  <DropdownMenuItem onClick={() => setTheme('dark')}>
+    Dark
+  </DropdownMenuItem>
+  <DropdownMenuItem onClick={() => setTheme('system')}>
+    System
+  </DropdownMenuItem>
+</DropdownMenuContent> */
+}

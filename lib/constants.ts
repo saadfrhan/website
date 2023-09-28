@@ -9,22 +9,6 @@ import { FileText } from 'lucide-react';
 
 export const profile = {
   fullName: 'Saad Farhan',
-  skills: [
-    'JavaScript',
-    'TypeScript',
-    'CSS',
-    'React',
-    'Node.js',
-    'Next.js',
-    'MongoDB',
-    'TailwindCSS',
-    'Contentful',
-    'Sanity',
-    'Responsive Design',
-    'Vercel Postgres',
-    'FaunaDB',
-    'PlanetScale',
-  ],
   headline: 'I build things for the web.',
   bio: `I'm a software engineer, specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.`,
   links: {

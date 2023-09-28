@@ -10,7 +10,6 @@ import { TooltipProvider } from './ui/tooltip';
 import Image, { StaticImageData } from 'next/image';
 import { buttonVariants } from './ui/button';
 import NextjsIcon from '/public/icons/Nextjs.png';
-import SanityIcon from '/public/icons/Sanity.png';
 import ClerkDevIcon from '/public/icons/ClerkDev.png';
 import TypeScriptIcon from '/public/icons/TypeScript.png';
 import VercelIcon from '/public/icons/Vercel.png';
@@ -29,7 +28,6 @@ const icons: {
   TypeScript: TypeScriptIcon,
   'Next.js': NextjsIcon,
   'Vercel Postgres': VercelIcon,
-  Sanity: SanityIcon,
   Clerk: ClerkDevIcon,
   MDX: MDXIcon,
   TailwindCSS: TailwindcssIcon,

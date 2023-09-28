@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ThemeToggler } from '../theme-toggler';
 
 export default function Navbar() {
   return (
@@ -12,6 +13,9 @@ export default function Navbar() {
           </Link>
           <nav className="max-sm:self-end">
             <ul className="flex items-center gap-x-5 md:gap-x-8">
+              <li>
+                <ThemeToggler />
+              </li>
               <li>
                 <Link href="/" className="hover:text-primary duration-300">
                   Home
