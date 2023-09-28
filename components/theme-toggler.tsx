@@ -7,14 +7,14 @@ import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 export function ThemeToggler() {
-  const { setTheme, theme = 'system' } = useTheme();
+  const { setTheme, theme } = useTheme();
 
   const icon: {
-    [key: string]: React.ElementType;
+    [key: string]: React.JSX.Element;
   } = {
-    light: Sun,
-    dark: Moon,
-    system: Monitor,
+    light: <Sun />,
+    dark: <Moon />,
+    system: <Monitor />,
   };
 
   return (
@@ -27,22 +27,8 @@ export function ThemeToggler() {
         else if (theme === 'system') setTheme('light');
       }}
     >
-      {React.createElement(icon[theme])}
+      {theme && icon[theme]}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
-}
-
-{
-  /* <DropdownMenuContent align="end">
-  <DropdownMenuItem onClick={() => setTheme('light')}>
-    Light
-  </DropdownMenuItem>
-  <DropdownMenuItem onClick={() => setTheme('dark')}>
-    Dark
-  </DropdownMenuItem>
-  <DropdownMenuItem onClick={() => setTheme('system')}>
-    System
-  </DropdownMenuItem>
-</DropdownMenuContent> */
 }
