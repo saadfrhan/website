@@ -62,7 +62,7 @@ export default function RootLayout({
         <body
           className={`${inter.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}
         >
-          <main className="flex-auto min-w-0 flex flex-col space-y-8 px-4 md:px-0">
+          <main className="flex-auto min-w-0 flex flex-col space-y-6 pb-8 px-4 md:px-0">
             <Navbar />
             {children}
           </main>

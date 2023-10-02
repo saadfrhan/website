@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 export function ThemeToggler() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme = 'system' } = useTheme();
 
   const icon: {
     [key: string]: React.JSX.Element;

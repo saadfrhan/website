@@ -4,7 +4,7 @@ import { ThemeToggler } from '../theme-toggler';
 export default function Navbar() {
   return (
     <header>
-      <div className="max-w-2xl mx-auto flex items-center justify-between border-b py-5">
+      <div className="max-w-2xl mx-auto flex items-center justify-between py-5">
         <div className="flex justify-between w-full max-sm:gap-y-2 max-sm:flex-col items-center gap-x-2 md:gap-x-8">
           <Link href="/" className="max-sm:self-start">
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">

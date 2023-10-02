@@ -24,10 +24,6 @@ export const profile = {
       link: 'https://www.linkedin.com/in/saad-farhan-ab10b8244/',
       icon: Linkedin,
     },
-    Twitter: {
-      link: 'https://twitter.com/saadfarhan347',
-      icon: Twitter,
-    },
     Resume: {
       link: 'https://www.canva.com/design/DAFb3337tIA/nh3rOWE5EiM7U2QB5yQK5A/edit',
       icon: FileText,
