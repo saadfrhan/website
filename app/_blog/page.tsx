@@ -15,7 +15,7 @@ export default async function BlogPage() {
     return (
       <section className="flex flex-col items-center justify-center space-y-4">
         <P className="text-neutral-500 dark:text-neutral-400">
-          I haven't written any blog posts yet. :(
+          I haven&apos;t written any blog posts yet. :(
         </P>
       </section>
     );

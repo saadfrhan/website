@@ -1,15 +1,22 @@
-import { allBlogs } from '@/contentlayer/generated';
+// import { allBlogs } from '@/contentlayer/generated';
 
 export default async function sitemap() {
-  const blogs = allBlogs.map((post) => ({
-    url: `https://saadfarhan.vercel.app/blog/${post.slug}`,
-    lastModified: post.publishedAt,
-  }));
+  // const blogs = allBlogs.map((post) => ({
+  //   url: `https://saadfarhan.vercel.app/blog/${post.slug}`,
+  //   lastModified: post.publishedAt,
+  // }));
 
-  const routes = ['', '/blog', '/about'].map((route) => ({
+  const routes = [
+    '',
+    //  '/blog',
+    '/about',
+  ].map((route) => ({
     url: `https://saadfarhan.vercel.app${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));
 
-  return [...routes, ...blogs];
+  return [
+    ...routes,
+    // ...blogs
+  ];
 }
