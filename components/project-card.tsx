@@ -49,15 +49,13 @@ interface Project {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="justify-start w-auto h-auto text-left p-auto flex flex-col max-sm:gap-y-2">
-      <CardHeader className="p-2">
-        <CardTitle className="p-2 pt-1 text-lg font-bold">
-          {project.title}
-        </CardTitle>
-        <CardDescription className="pl-2">{project.tagline}</CardDescription>
+    <Card className="justify-start rounded-3xl text-left flex flex-col max-sm:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br">
+      <CardHeader className="gap-0">
+        <CardTitle className="text-lg font-bold">{project.title}</CardTitle>
+        <CardDescription>{project.tagline}</CardDescription>
       </CardHeader>
-      <CardFooter className="flex items-end p-0 justify-between gap-x-4 max-sm:flex-col max-sm:items-start">
-        <div className="flex gap-2 pl-4 pb-4">
+      <CardFooter className="flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start">
+        <div className="flex gap-2">
           <TooltipProvider>
             {project.tech.map((tech) => (
               <TooltipWrapper key={tech} label={tech}>
@@ -68,13 +66,16 @@ export default function ProjectCard({ project }: { project: Project }) {
             ))}
           </TooltipProvider>
         </div>
-        <div className="flex space-x-4 p-4 max-sm:pt-1">
+        <div className="flex space-x-4">
           <a
             href={project.repoURL}
             rel="noreferer noopener"
             className={buttonVariants({
               variant: 'secondary',
+              className:
+                'bg-transparent border-2 hover:bg-secondary rounded-xl',
             })}
+            target="_blank"
           >
             Code
           </a>
@@ -84,7 +85,10 @@ export default function ProjectCard({ project }: { project: Project }) {
               rel="noreferer noopener"
               className={buttonVariants({
                 variant: 'secondary',
+                className:
+                  'bg-transparent border-2 hover:bg-secondary rounded-xl',
               })}
+              target="_blank"
             >
               Demo
             </a>
