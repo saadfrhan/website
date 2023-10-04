@@ -11,6 +11,7 @@ export function ThemeToggler() {
 
   return (
     <Button
+      size="icon"
       variant="link"
       onClick={() =>
         setTheme(

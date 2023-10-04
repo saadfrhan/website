@@ -1,7 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 import { ThemeToggler } from '../theme-toggler';
+import { usePathname } from 'next/navigation';
+import { buttonVariants } from '../ui/button';
 
 export default function Navbar() {
+  const routes = [
+    {
+      name: 'Home',
+      path: '/',
+    },
+    {
+      name: 'About',
+      path: '/about',
+    },
+    {
+      name: 'Blog',
+      path: '/blog',
+    },
+  ];
+
+  const pathname = usePathname();
+
   return (
     <header>
       <div className="max-w-2xl mx-auto flex items-center justify-between py-5">
@@ -16,21 +37,23 @@ export default function Navbar() {
               <li>
                 <ThemeToggler />
               </li>
-              <li>
-                <Link href="/" className="hover:text-primary duration-300">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-primary duration-300">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-primary duration-300">
-                  Blog
-                </Link>
-              </li>
+              {routes.map((route) => (
+                <li key={route.name}>
+                  <Link
+                    href={route.path}
+                    className={buttonVariants({
+                      variant: 'ghost',
+                      className:
+                        `hover:border-primary duration-300 border-[2px] border-transparent` +
+                        (pathname === route.path
+                          ? ' border-primary bg-accent'
+                          : ''),
+                    })}
+                  >
+                    {route.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

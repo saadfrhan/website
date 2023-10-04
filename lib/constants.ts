@@ -9,8 +9,8 @@ import { FileText } from 'lucide-react';
 
 export const profile = {
   fullName: 'Saad Farhan',
-  headline: 'I build things for the web.',
-  bio: `I'm a software engineer, specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.`,
+  headline: 'Fullstack Developer',
+  bio: `specialized in building (and occasionally designing) exceptional websites, applications, and everything in between.`,
   links: {
     Discord: {
       link: 'https://discordapp.com/users/saadfarhan',
@@ -73,7 +73,7 @@ export const projects = [
   },
   {
     title: 'simpleshare',
-    tagline: 'Social app for sharing your thoughts',
+    tagline: 'Social app for sharing stories',
     demoURL: 'https://simpleshare.vercel.app/',
     repoURL: 'https://github.com/saadfrhan/simpleshare',
     tech: [

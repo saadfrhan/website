@@ -24,7 +24,7 @@ export default async function About() {
 
         <div className="prose dark:prose-invert ">
           <p>
-            👋 Hi there! I&#39;m your go-to Jamstack developer with a knack for
+            👋 Hi there! I&#39;m your go-to Fullstack developer with a knack for
             staying updated on the latest tech trends.
           </p>
 
@@ -37,7 +37,7 @@ export default async function About() {
           <p>
             🚀 What sets me apart is my expertise in JavaScript frameworks,
             particularly in front-end development. I specialize in crafting web
-            apps using the cutting-edge Jamstack approach.
+            apps using the cutting-edge technologies.
           </p>
 
           <p>

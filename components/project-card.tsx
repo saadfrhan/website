@@ -24,6 +24,7 @@ import NodejsIcon from '/public/icons/Nodejs.png';
 import NextAuthIcon from '/public/icons/next-auth.png';
 import PrismaIcon from '/public/icons/prisma.png';
 import PlanetscaleIcon from '/public/icons/planet-scale.png';
+import { ExternalLink } from 'lucide-react';
 
 const icons: {
   [x: string]: StaticImageData;
@@ -85,26 +86,26 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={project.repoURL}
             rel="noreferer noopener"
             className={buttonVariants({
-              variant: 'ghost',
+              variant: 'default',
               className:
-                'hover:border-primary duration-300 border-[2px] border-transparent',
+                'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2',
             })}
             target="_blank"
           >
-            Repo
+            Repo <ExternalLink className="w-4 h-4" />
           </a>
           {project.demoURL && (
             <a
               href={project.demoURL}
               rel="noreferer noopener"
               className={buttonVariants({
-                variant: 'ghost',
+                variant: 'default',
                 className:
-                  'hover:border-primary duration-300 border-[2px] border-transparent',
+                  'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2',
               })}
               target="_blank"
             >
-              Demo
+              Demo <ExternalLink className="w-4 h-4" />
             </a>
           )}
         </div>
