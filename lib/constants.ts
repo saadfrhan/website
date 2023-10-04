@@ -53,13 +53,13 @@ export const projects = [
   {
     title: 'website',
     tagline: 'My Personal Website',
-    demoURL: 'https://saadfarhan.me/',
+    demoURL: 'https://saadfarhan.vercel.app',
     tech: ['TypeScript', 'Next.js', 'TailwindCSS', 'shadcn/ui', 'MDX'],
     repoURL: 'https://github.com/saadfrhan/website',
   },
   {
-    title: 'mern-bookstore',
-    tagline: 'A MERN Stack Bookstore Application',
+    title: 'mern-booklist',
+    tagline: 'A MERN Stack Booklist Application',
     tech: [
       'TypeScript',
       'React',
@@ -69,7 +69,7 @@ export const projects = [
       'Express.js',
       'Node.js',
     ],
-    repoURL: 'https://github.com/saadfrhan/mern-bookstore',
+    repoURL: 'https://github.com/saadfrhan/mern-booklist',
   },
   {
     title: 'simpleshare',
