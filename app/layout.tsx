@@ -53,7 +53,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
         <body
           className={`${inter.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}
         >

@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Moon, Sun, Monitor } from 'lucide-react';
+import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 import { Button } from '@/components/ui/button';
@@ -9,24 +9,16 @@ import { Button } from '@/components/ui/button';
 export function ThemeToggler() {
   const { setTheme, theme } = useTheme();
 
-  const icon: {
-    [key: string]: React.JSX.Element;
-  } = {
-    light: <Sun />,
-    dark: <Moon />,
-  };
-
   return (
     <Button
       variant="link"
-      size="icon"
-      onClick={() => {
-        if (theme === 'light') setTheme('dark');
-        if (theme === 'dark') setTheme('light');
-      }}
+      onClick={() =>
+        setTheme(
+          theme === 'dark' ? 'light' : theme === 'light' ? 'system' : 'dark'
+        )
+      }
     >
-      {theme && icon[theme]}
-      <span className="sr-only">Toggle theme</span>
+      {theme === 'dark' ? <Moon /> : theme === 'light' ? <Sun /> : <Monitor />}
     </Button>
   );
 }
