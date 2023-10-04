@@ -23,7 +23,7 @@ import ReactIcon from '/public/icons/React.png';
 import NodejsIcon from '/public/icons/Nodejs.png';
 import NextAuthIcon from '/public/icons/next-auth.png';
 import PrismaIcon from '/public/icons/prisma.png';
-import PlanetscaleIcon from '/public/icons/planetscale.png';
+import PlanetscaleIcon from '/public/icons/planet-scale.png';
 
 const icons: {
   [x: string]: StaticImageData;
