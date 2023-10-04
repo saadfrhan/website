@@ -21,6 +21,9 @@ import ExpressIcon from '/public/icons/express.png';
 import ReduxIcon from '/public/icons/redux.png';
 import ReactIcon from '/public/icons/React.png';
 import NodejsIcon from '/public/icons/Nodejs.png';
+import NextAuthIcon from '/public/icons/next-auth.png';
+import PrismaIcon from '/public/icons/prisma.png';
+import PlanetscaleIcon from '/public/icons/planetscale.png';
 
 const icons: {
   [x: string]: StaticImageData;
@@ -37,6 +40,9 @@ const icons: {
   'RTK Query': ReduxIcon,
   React: ReactIcon,
   'Node.js': NodejsIcon,
+  'NextAuth.js': NextAuthIcon,
+  Prisma: PrismaIcon,
+  Planetscale: PlanetscaleIcon,
 };
 
 interface Project {
@@ -44,14 +50,22 @@ interface Project {
   tagline: string;
   demoURL?: string;
   repoURL: string;
+  isInProgress?: boolean;
   tech: string[];
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="justify-start rounded-3xl text-left flex flex-col max-sm:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br">
+    <Card className="justify-start rounded-3xl text-left flex flex-col max-sm:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br border-primary/10">
       <CardHeader className="gap-0">
-        <CardTitle className="text-lg font-bold">{project.title}</CardTitle>
+        <CardTitle className="text-lg font-bold flex gap-2 items-center">
+          {project.title}
+          {project.isInProgress && (
+            <span className="text-xs font-medium text-neutral-400 dark:text-neutral-500">
+              (work in progress)
+            </span>
+          )}
+        </CardTitle>
         <CardDescription>{project.tagline}</CardDescription>
       </CardHeader>
       <CardFooter className="flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start">
@@ -71,22 +85,22 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={project.repoURL}
             rel="noreferer noopener"
             className={buttonVariants({
-              variant: 'secondary',
+              variant: 'ghost',
               className:
-                'bg-transparent border-2 hover:bg-secondary rounded-xl',
+                'hover:border-primary duration-300 border-[2px] border-transparent',
             })}
             target="_blank"
           >
-            Code
+            Repo
           </a>
           {project.demoURL && (
             <a
               href={project.demoURL}
               rel="noreferer noopener"
               className={buttonVariants({
-                variant: 'secondary',
+                variant: 'ghost',
                 className:
-                  'bg-transparent border-2 hover:bg-secondary rounded-xl',
+                  'hover:border-primary duration-300 border-[2px] border-transparent',
               })}
               target="_blank"
             >

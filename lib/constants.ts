@@ -71,4 +71,19 @@ export const projects = [
     ],
     repoURL: 'https://github.com/saadfrhan/mern-bookstore',
   },
+  {
+    title: 'simpleshare',
+    tagline: 'Social app for sharing your thoughts',
+    demoURL: 'https://simpleshare.vercel.app/',
+    repoURL: 'https://github.com/saadfrhan/simpleshare',
+    tech: [
+      'TypeScript',
+      'Planetscale',
+      'Prisma',
+      'shadcn/ui',
+      'NextAuth.js',
+      'TailwindCSS',
+    ],
+    isInProgress: true,
+  },
 ];

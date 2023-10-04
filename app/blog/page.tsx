@@ -7,7 +7,6 @@ import { P } from '@/components/ui/p';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Read my thoughts on software development, design, and more.',
 };
 
 export default async function BlogPage() {
@@ -15,7 +14,7 @@ export default async function BlogPage() {
     return (
       <section className="flex flex-col items-center justify-center space-y-4">
         <P className="text-neutral-500 dark:text-neutral-400">
-          I haven&apos;t written any blog posts yet. :(
+          I haven&apos;t written any blog posts yet.
         </P>
       </section>
     );
