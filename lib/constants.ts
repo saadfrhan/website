@@ -37,9 +37,9 @@ export const profile = {
 
 export const projects = [
   {
-    title: 'fullstack-nextjs-marketplace',
+    title: 'dinemarket',
     tagline: 'Clothing Shop App with Next.js',
-    demoURL: 'https://fullstack-online-marketplace.vercel.app/',
+    demoURL: 'https://dinemarket-app.vercel.app/',
     tech: [
       'TypeScript',
       'Next.js',
@@ -49,7 +49,7 @@ export const projects = [
       'shadcn/ui',
       'Drizzle ORM',
     ],
-    repoURL: 'https://github.com/saadfrhan/fullstack-nextjs-marketplace',
+    repoURL: 'https://github.com/saadfrhan/dinemarket',
   },
   {
     title: 'website',
@@ -59,7 +59,7 @@ export const projects = [
     repoURL: 'https://github.com/saadfrhan/website',
   },
   {
-    title: 'mern-booklist',
+    title: 'bookshelf',
     tagline: 'A MERN Stack Booklist Application',
     tech: [
       'TypeScript',
@@ -70,7 +70,7 @@ export const projects = [
       'Express.js',
       'Node.js',
     ],
-    repoURL: 'https://github.com/saadfrhan/mern-booklist',
+    repoURL: 'https://github.com/saadfrhan/bookshelf',
   },
   {
     title: 'simpleshare',
@@ -88,10 +88,10 @@ export const projects = [
     isInProgress: true,
   },
   {
-    title: 'transportation-dashboard',
+    title: 'transbiz',
     tagline: 'Dashboard for a Transportation Company',
-    demoURL: 'https://transportation-dashboard.vercel.app',
-    repoURL: 'https://github.com/saadfrhan/transportation-dashboard',
+    demoURL: 'https://transbiz.vercel.app',
+    repoURL: 'https://github.com/saadfrhan/transbiz',
     tech: [
       'TypeScript',
       'MongoDB',
