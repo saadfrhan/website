@@ -63,14 +63,14 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="justify-start rounded-3xl text-left flex flex-col max-sm:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br border-primary/10">
       <CardHeader className="gap-0">
-        <CardTitle className="text-lg font-bold items-center">
+        <CardTitle className="text-lg font-bold items-center leading-none">
           {project.title}
         </CardTitle>
         {project.isInProgress && (
-            <span className="text-xs font-medium text-neutral-400 dark:text-neutral-500">
-              (work in progress)
-            </span>
-          )}
+          <span className="text-xs font-medium text-neutral-400 dark:text-neutral-500">
+            (work in progress)
+          </span>
+        )}
         <CardDescription>{project.tagline}</CardDescription>
       </CardHeader>
       <CardFooter className="flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start">
