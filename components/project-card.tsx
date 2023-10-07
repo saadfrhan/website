@@ -24,6 +24,8 @@ import NodejsIcon from '/public/icons/Nodejs.png';
 import NextAuthIcon from '/public/icons/next-auth.png';
 import PrismaIcon from '/public/icons/prisma.png';
 import PlanetscaleIcon from '/public/icons/planet-scale.png';
+import DrizzleIcon from '/public/icons/drizzle.png';
+import MongooseIcon from '/public/icons/mongoose.png';
 import { ExternalLink } from 'lucide-react';
 
 const icons: {
@@ -42,8 +44,10 @@ const icons: {
   React: ReactIcon,
   'Node.js': NodejsIcon,
   'NextAuth.js': NextAuthIcon,
-  Prisma: PrismaIcon,
-  Planetscale: PlanetscaleIcon,
+  'Prisma ORM': PrismaIcon,
+  PlanetScale: PlanetscaleIcon,
+  'Drizzle ORM': DrizzleIcon,
+  'Mongoose ORM': MongooseIcon,
 };
 
 interface Project {
