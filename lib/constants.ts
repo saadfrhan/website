@@ -101,5 +101,6 @@ export const projects = [
       'TailwindCSS',
       'Mongoose ORM',
     ],
+    isInProgress: true,
   },
 ];
