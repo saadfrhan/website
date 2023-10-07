@@ -12,6 +12,10 @@ export const profile = {
   headline: 'Fullstack Developer',
   bio: `specialized in building (and occasionally designing) exceptional websites, applications, and everything in between.`,
   links: {
+    Twitter: {
+      link: 'https://twitter.com/saadfarhan347',
+      icon: Twitter,
+    },
     Discord: {
       link: 'https://discordapp.com/users/saadfarhan',
       icon: Discord,
