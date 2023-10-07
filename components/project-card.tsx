@@ -65,12 +65,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       <CardHeader className="gap-0">
         <CardTitle className="text-lg font-bold items-center">
           {project.title}
-          {project.isInProgress && (
+        </CardTitle>
+        {project.isInProgress && (
             <span className="text-xs font-medium text-neutral-400 dark:text-neutral-500">
               (work in progress)
             </span>
           )}
-        </CardTitle>
         <CardDescription>{project.tagline}</CardDescription>
       </CardHeader>
       <CardFooter className="flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start">
