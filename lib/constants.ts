@@ -1,7 +1,6 @@
 import {
   AiFillGithub as Github,
   AiFillLinkedin as Linkedin,
-  AiOutlineTwitter as Twitter,
 } from 'react-icons/ai';
 import { BiLogoGmail as Gmail } from 'react-icons/bi';
 import { BsDiscord as Discord } from 'react-icons/bs';
