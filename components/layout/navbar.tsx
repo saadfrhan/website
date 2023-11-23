@@ -15,10 +15,6 @@ export default function Navbar() {
       name: 'About',
       path: '/about',
     },
-    {
-      name: 'Blog',
-      path: '/blog',
-    },
   ];
 
   const pathname = usePathname();
