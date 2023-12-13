@@ -59,6 +59,7 @@ export default async function RootLayout({
         attribute="class"
         defaultTheme="system"
         enableSystem
+        disableTransitionOnChange
       >
         <body
           className={`${inter.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}
@@ -68,7 +69,7 @@ export default async function RootLayout({
             {children}
           </main>
           <div className="fixed max-sm:bottom-2 max-sm:right-2 bottom-5 right-5 text-xs font-medium text-neutral-400 dark:text-neutral-500">
-            last updated {formatDistance(new Date(await getLatestCommitDate()), new Date(),
+            Last updated {formatDistance(new Date(await getLatestCommitDate()), new Date(),
               { addSuffix: true }
             )
 
