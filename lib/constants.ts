@@ -1,6 +1,7 @@
 import {
   AiFillGithub as Github,
   AiFillLinkedin as Linkedin,
+  AiOutlineTwitter as Twitter,
 } from 'react-icons/ai';
 import { BiLogoGmail as Gmail } from 'react-icons/bi';
 import { BsDiscord as Discord } from 'react-icons/bs';
@@ -18,6 +19,10 @@ export const profile = {
     GitHub: {
       link: 'https://github.com/saadfrhan',
       icon: Github,
+    },
+    Twitter: {
+      link: 'https://twitter.com/saadfarhan547',
+      icon: Twitter,
     },
     LinkedIn: {
       link: 'https://www.linkedin.com/in/saad-farhan-ab10b8244/',
@@ -54,7 +59,7 @@ export const projects = [
     title: 'website',
     tagline: 'My Personal Website',
     demoURL: 'https://saadfarhan.vercel.app',
-    tech: ['TypeScript', 'Next.js', 'TailwindCSS', 'shadcn/ui', 'MDX'],
+    tech: ['TypeScript', 'Next.js', 'TailwindCSS', 'shadcn/ui'],
     repoURL: 'https://github.com/saadfrhan/website',
   },
   {
@@ -68,6 +73,7 @@ export const projects = [
       'RTK Query',
       'Express.js',
       'Node.js',
+      'Mongoose ODM'
     ],
     repoURL: 'https://github.com/saadfrhan/bookshelf',
   },
@@ -98,7 +104,7 @@ export const projects = [
       'Clerk',
       'Next.js',
       'TailwindCSS',
-      'Mongoose ORM',
+      'Mongoose ODM',
     ],
     isInProgress: true,
   },
@@ -142,7 +148,7 @@ export const _icons: {
   'Prisma ORM': PrismaIcon,
   PlanetScale: PlanetscaleIcon,
   'Drizzle ORM': DrizzleIcon,
-  'Mongoose ORM': MongooseIcon,
+  'Mongoose ODM': MongooseIcon,
 };
 
 export const icons: {

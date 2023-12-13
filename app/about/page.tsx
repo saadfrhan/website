@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { H1 } from '@/components/ui/h1';
 import Me from '/public/me.png';
 import { profile } from '@/lib/constants';
+import { Button } from '@/components/ui/button';
 
 export const metadata = {
   title: 'About',
@@ -9,60 +10,57 @@ export const metadata = {
     'Saad Farhan, your Jamstack wizard in Karachi, crafting the future of web development with expertise in JavaScript frameworks and a commitment to quality. 🚀🌟',
 };
 
-export default async function About() {
+export default function About() {
   return (
-    <div className="pb-8">
-      <section className="space-y-4">
-        <Image
-          src={Me}
-          alt="Saad Farhan"
-          width={120}
-          height={120}
-          className="rounded-full"
-        />
-        <H1>I&apos;m {profile.fullName}.</H1>
+    <div className="container mx-auto p-8 prose dark:prose-invert max-w-2xl">
+      <section className="flex flex-col">
+        <H1 className="text-3xl font-bold">Hi, I'm {profile.fullName} 🌟🚀🎉</H1>
 
-        <div className="prose dark:prose-invert ">
-          <p>
-            👋 Hi there! I&#39;m your go-to Fullstack developer with a knack for
-            staying updated on the latest tech trends.
+
+        <div className="text-lg">
+          <Image
+            src={Me}
+            alt="Saad Farhan"
+            width={250}
+            height={250}
+            className="rounded-md max-sm:w-full relative float-left mr-8 max-sm:mb-8"
+          />
+          <p className='mt-0'>
+            Welcome to my digital space! I'm a passionate Fullstack developer based in Karachi, dedicated to shaping the future of web development.
           </p>
 
           <p>
-            I thrive on finding innovative solutions to tough problems through
-            hands-on experimentation. Quality is my priority, and I&#39;m always
-            eager to learn, adapt, and grow.
+            Armed with expertise in JavaScript frameworks, I embark on a journey of continuous learning, innovation, and problem-solving. Quality is my mantra.
           </p>
 
           <p>
-            🚀 What sets me apart is my expertise in JavaScript frameworks,
-            particularly in front-end development. I specialize in crafting web
-            apps using the cutting-edge technologies.
+            🚀 Specializing in front-end development, I leverage cutting-edge technologies to craft engaging web applications. As a collaborative team player, I consistently push boundaries for exceptional outcomes.
           </p>
 
-          <p>
-            I&#39;m not only a solo achiever but also a team player, constantly
-            striving to exceed limits and deliver top-notch outcomes.
-          </p>
+          <p>🛠️ My toolkit includes:</p>
 
-          <p>🛠️ My toolkit includes: </p>
-
-          <ul>
-            <li>Frontend magic with React and Next.js</li>
-            <li>Smart state management using Redux Toolkit</li>
-            <li>Content management through Contentful and Sanity</li>
-            <li>Harnessing Netlify and Vercel serverless functions.</li>
-            <li>Conversant in JavaScript and TypeScript</li>
+          <ul className="list-disc pl-6">
+            <li>React and Next.js for enchanting frontend experiences</li>
+            <li>Redux Toolkit for smart state management</li>
+            <li>Contentful and Sanity for seamless content management</li>
+            <li>Netlify and Vercel for powerful serverless functions</li>
+            <li>JavaScript and TypeScript proficiency</li>
             <li>
-              Databases like FaunaDB, MongoDB, Vercel Postgres, PlanetScale, and
-              NeonDB
+              Databases like FaunaDB, MongoDB, Vercel Postgres, PlanetScale, and NeonDB
             </li>
-            <li>Command-line wizardry with Node.js</li>
-            <li>Powering up with VS Code IDE</li>
-            <li>GitHub as my version control sidekick</li>
+            <li>Node.js for command-line wizardry</li>
+            <li>VS Code as my coding sanctuary</li>
+            <li>GitHub, my version control accomplice</li>
           </ul>
         </div>
       </section>
+      <div
+        className='flex justify-end'
+      >
+        <Button size="lg">
+          Check out my Projects
+        </Button>
+      </div>
     </div>
   );
-}
+};

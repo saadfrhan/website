@@ -2,9 +2,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { TooltipWrapper } from '@/lib/utils';
 import { P } from '@/components/ui/p';
-import ProjectCard from '@/components/project-card';
-import { icons, profile, projects } from '@/lib/constants';
-import { MultiSelectDropdown } from '@/components/ui/multiselect-dropdown';
+import { profile } from '@/lib/constants';
 import Projects from '@/components/projects';
 
 export default async function Home() {
@@ -36,7 +34,7 @@ export default async function Home() {
                           size: 'icon',
                           variant: 'ghost',
                           className:
-                            'h-12 w-12 hover:border-[2px] hover:border-primary duration-300',
+                            `h-12 w-12 hover:border-[2px] hover:border-primary duration-300`,
                         })}
                       >
                         <Icon size={24} />

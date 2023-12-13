@@ -28,3 +28,12 @@ export function TooltipWrapper({
     </Tooltip>
   );
 }
+
+// get a latest commit date from github repo saadfrhan/website
+
+export async function getLatestCommitDate() {
+  const res = await fetch('https://api.github.com/repos/saadfrhan/website/commits');
+  const json = await res.json();
+  const latestCommitDate = json[0].commit.author.date;
+  return latestCommitDate;
+}
