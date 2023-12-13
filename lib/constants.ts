@@ -103,3 +103,132 @@ export const projects = [
     isInProgress: true,
   },
 ];
+
+import NextjsIcon from '/public/icons/Nextjs.png';
+import ClerkDevIcon from '/public/icons/ClerkDev.png';
+import TypeScriptIcon from '/public/icons/TypeScript.png';
+import VercelIcon from '/public/icons/Vercel.png';
+import MDXIcon from '/public/icons/MDX.png';
+import TailwindcssIcon from '/public/icons/TailwindCSS.png';
+import ShadcnUIIcon from '/public/icons/shadcn-ui.png';
+import MongoDBIcon from '/public/icons/MongoDB.png';
+import ExpressIcon from '/public/icons/express.png';
+import ReduxIcon from '/public/icons/redux.png';
+import ReactIcon from '/public/icons/React.png';
+import NodejsIcon from '/public/icons/Nodejs.png';
+import NextAuthIcon from '/public/icons/next-auth.png';
+import PrismaIcon from '/public/icons/prisma.png';
+import PlanetscaleIcon from '/public/icons/planet-scale.png';
+import DrizzleIcon from '/public/icons/drizzle.png';
+import MongooseIcon from '/public/icons/mongoose.png';
+import { StaticImageData } from 'next/image';
+
+export const _icons: {
+  [x: string]: StaticImageData;
+} = {
+  TypeScript: TypeScriptIcon,
+  'Next.js': NextjsIcon,
+  'Vercel Postgres': VercelIcon,
+  Clerk: ClerkDevIcon,
+  MDX: MDXIcon,
+  TailwindCSS: TailwindcssIcon,
+  'shadcn/ui': ShadcnUIIcon,
+  MongoDB: MongoDBIcon,
+  'Express.js': ExpressIcon,
+  'RTK Query': ReduxIcon,
+  React: ReactIcon,
+  'Node.js': NodejsIcon,
+  'NextAuth.js': NextAuthIcon,
+  'Prisma ORM': PrismaIcon,
+  PlanetScale: PlanetscaleIcon,
+  'Drizzle ORM': DrizzleIcon,
+  'Mongoose ORM': MongooseIcon,
+};
+
+export const icons: {
+  value: string;
+  label: string;
+  icon: StaticImageData;
+}[] = [
+    {
+      value: 'TypeScript',
+      label: 'TypeScript',
+      icon: TypeScriptIcon,
+    },
+    {
+      value: 'Next.js',
+      label: 'Next.js',
+      icon: NextjsIcon,
+    },
+    {
+      value: 'Vercel Postgres',
+      label: 'Vercel Postgres',
+      icon: VercelIcon,
+    },
+    {
+      value: 'Clerk',
+      label: 'Clerk',
+      icon: ClerkDevIcon,
+    },
+    {
+      value: 'TailwindCSS',
+      label: 'TailwindCSS',
+      icon: TailwindcssIcon,
+    },
+    {
+      value: 'shadcn/ui',
+      label: 'shadcn/ui',
+      icon: ShadcnUIIcon,
+    },
+    {
+      value: 'MongoDB',
+      label: 'MongoDB',
+      icon: MongoDBIcon,
+    },
+    {
+      value: 'Express.js',
+      label: 'Express.js',
+      icon: ExpressIcon,
+    },
+    {
+      value: 'RTK Query',
+      label: 'RTK Query',
+      icon: ReduxIcon,
+    },
+    {
+      value: 'React',
+      label: 'React',
+      icon: ReactIcon,
+    },
+
+    {
+      value: 'Node.js',
+      label: 'Node.js',
+      icon: NodejsIcon,
+    },
+    {
+      value: 'NextAuth.js',
+      label: 'NextAuth.js',
+      icon: NextAuthIcon,
+    },
+    {
+      value: 'Prisma ORM',
+      label: 'Prisma ORM',
+      icon: PrismaIcon,
+    },
+    {
+      value: 'PlanetScale',
+      label: 'PlanetScale',
+      icon: PlanetscaleIcon,
+    },
+    {
+      value: 'Drizzle ORM',
+      label: 'Drizzle ORM',
+      icon: DrizzleIcon,
+    },
+    {
+      value: 'Mongoose ODM',
+      label: 'Mongoose ODM',
+      icon: MongooseIcon,
+    },
+  ];

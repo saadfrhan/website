@@ -3,7 +3,9 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { TooltipWrapper } from '@/lib/utils';
 import { P } from '@/components/ui/p';
 import ProjectCard from '@/components/project-card';
-import { profile, projects } from '@/lib/constants';
+import { icons, profile, projects } from '@/lib/constants';
+import { MultiSelectDropdown } from '@/components/ui/multiselect-dropdown';
+import Projects from '@/components/projects';
 
 export default async function Home() {
   return (
@@ -46,16 +48,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="space-y-6">
-        <h2 className="scroll-m-20 pb-2 text-3xl text-center font-bold tracking-tight transition-colors first:mt-0">
-          Projects
-        </h2>
-        <p className="mt-4 space-y-6">
-          {projects.map((project, index) => (
-            <ProjectCard project={project} key={index} />
-          ))}
-        </p>
-      </section>
+      <Projects />
     </main>
   );
 }

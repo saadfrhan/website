@@ -9,46 +9,8 @@ import {
 import { TooltipProvider } from './ui/tooltip';
 import Image, { StaticImageData } from 'next/image';
 import { buttonVariants } from './ui/button';
-import NextjsIcon from '/public/icons/Nextjs.png';
-import ClerkDevIcon from '/public/icons/ClerkDev.png';
-import TypeScriptIcon from '/public/icons/TypeScript.png';
-import VercelIcon from '/public/icons/Vercel.png';
-import MDXIcon from '/public/icons/MDX.png';
-import TailwindcssIcon from '/public/icons/TailwindCSS.png';
-import ShadcnUIIcon from '/public/icons/shadcn-ui.png';
-import MongoDBIcon from '/public/icons/MongoDB.png';
-import ExpressIcon from '/public/icons/express.png';
-import ReduxIcon from '/public/icons/redux.png';
-import ReactIcon from '/public/icons/React.png';
-import NodejsIcon from '/public/icons/Nodejs.png';
-import NextAuthIcon from '/public/icons/next-auth.png';
-import PrismaIcon from '/public/icons/prisma.png';
-import PlanetscaleIcon from '/public/icons/planet-scale.png';
-import DrizzleIcon from '/public/icons/drizzle.png';
-import MongooseIcon from '/public/icons/mongoose.png';
 import { ExternalLink } from 'lucide-react';
-
-const icons: {
-  [x: string]: StaticImageData;
-} = {
-  TypeScript: TypeScriptIcon,
-  'Next.js': NextjsIcon,
-  'Vercel Postgres': VercelIcon,
-  Clerk: ClerkDevIcon,
-  MDX: MDXIcon,
-  TailwindCSS: TailwindcssIcon,
-  'shadcn/ui': ShadcnUIIcon,
-  MongoDB: MongoDBIcon,
-  'Express.js': ExpressIcon,
-  'RTK Query': ReduxIcon,
-  React: ReactIcon,
-  'Node.js': NodejsIcon,
-  'NextAuth.js': NextAuthIcon,
-  'Prisma ORM': PrismaIcon,
-  PlanetScale: PlanetscaleIcon,
-  'Drizzle ORM': DrizzleIcon,
-  'Mongoose ORM': MongooseIcon,
-};
+import { icons } from '@/lib/constants';
 
 interface Project {
   title: string;
@@ -79,7 +41,10 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.tech.map((tech) => (
               <TooltipWrapper key={tech} label={tech}>
                 <div className="bg-white w-[22px] h-[22px] flex items-center justify-center rounded-full">
-                  <Image src={icons[tech]} alt={tech} width={16} height={16} />
+                  <Image src={icons.find(
+                    (icon) => icon.value === tech
+                  )?.icon as StaticImageData
+                  } alt={tech} width={16} height={16} />
                 </div>
               </TooltipWrapper>
             ))}
