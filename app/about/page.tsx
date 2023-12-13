@@ -2,7 +2,8 @@ import Image from 'next/image';
 import { H1 } from '@/components/ui/h1';
 import Me from '/public/me.png';
 import { profile } from '@/lib/constants';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'About',
@@ -57,9 +58,11 @@ export default function About() {
       <div
         className='flex justify-end'
       >
-        <Button size="lg">
+        <Link href="/#projects" className={buttonVariants({
+          size: 'lg'
+        })}>
           Check out my Projects
-        </Button>
+        </Link>
       </div>
     </div>
   );
