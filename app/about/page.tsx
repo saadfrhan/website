@@ -12,9 +12,9 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="container mx-auto p-8 prose dark:prose-invert max-w-2xl">
+    <div className="container mx-auto p-8 max-sm:p-0 prose dark:prose-invert max-w-2xl max-sm:max-w-full">
       <section className="flex flex-col">
-        <H1 className="text-3xl font-bold">Hi, I'm {profile.fullName} 🌟🚀🎉</H1>
+        <H1 className="text-3xl font-bold">Hi, I&#39;m {profile.fullName} 🌟</H1>
 
 
         <div className="text-lg">
@@ -26,7 +26,7 @@ export default function About() {
             className="rounded-md max-sm:w-full relative float-left mr-8 max-sm:mb-8"
           />
           <p className='mt-0'>
-            Welcome to my digital space! I'm a passionate Fullstack developer based in Karachi, dedicated to shaping the future of web development.
+            Welcome to my digital space! I&#39;m a passionate Fullstack developer based in Karachi, dedicated to shaping the future of web development.
           </p>
 
           <p>

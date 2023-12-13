@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Projects() {
     const [selectedValues, setSelectedValues] = useState<string[]>([]);
     return (
-        <section className="space-y-6" id="projects">
+        <section className="space-y-6 pt-4" id="projects">
             <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
                 Projects
             </h2>

@@ -4,6 +4,8 @@ import Navbar from '@/components/layout/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
+import { formatDistance } from 'date-fns';
+import { getLatestCommitDate } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     yandex: '30dab239bbb58d8f',
   },
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -65,6 +67,13 @@ export default function RootLayout({
             <Navbar />
             {children}
           </main>
+          <div className="fixed max-sm:bottom-2 max-sm:right-2 bottom-5 right-5 text-xs font-medium text-neutral-400 dark:text-neutral-500">
+            last updated {formatDistance(new Date(await getLatestCommitDate()), new Date(),
+              { addSuffix: true }
+            )
+
+            }
+          </div>
           <Analytics />
         </body>
       </ThemeProvider>
