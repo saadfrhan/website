@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
 import { GeistSans } from 'geist/font/sans'
-import { ThemeToggler } from '@/components/theme-toggler';
+import Navbar from '@/components/layout/navbar';
 
 const description =
 	'Application developer with coding skills & passion for staying current in the industry.';
@@ -60,10 +60,11 @@ export default async function RootLayout({
 				<body
 					className={`${GeistSans.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}
 				>
+					<main className="flex-auto min-w-0 flex flex-col space-y-3 pb-8 px-4 md:px-0">
+						<Navbar />
+						{children}
+					</main>
 					<Analytics />
-					<div className='fixed bottom-0 right-5'>
-						<ThemeToggler />
-					</div>
 				</body>
 			</ThemeProvider>
 		</html>

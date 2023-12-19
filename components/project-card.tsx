@@ -1,84 +1,85 @@
-import { TooltipWrapper } from '@/lib/utils';
+import { Data } from '@/lib/utils';
 import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+	Card,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
 } from './ui/card';
-import { TooltipProvider } from './ui/tooltip';
-import Image, { StaticImageData } from 'next/image';
 import { buttonVariants } from './ui/button';
-import { ExternalLink } from 'lucide-react';
-import { icons } from '@/lib/constants';
+import { ExternalLink, GitFork, Star } from 'lucide-react';
 
-interface Project {
-  title: string;
-  tagline: string;
-  demoURL?: string;
-  repoURL: string;
-  isInProgress?: boolean;
-  tech: string[];
-}
-
-export default function ProjectCard({ project }: { project: Project }) {
-  return (
-    <Card className="justify-start rounded-3xl text-left flex flex-col max-sm:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br border-primary/10">
-      <CardHeader className="gap-0">
-        <CardTitle className="text-lg font-bold items-center leading-none">
-          {project.title}
-        </CardTitle>
-        {project.isInProgress && (
-          <span className="text-xs font-medium text-neutral-400 dark:text-neutral-500">
-            (work in progress)
-          </span>
-        )}
-        <CardDescription>{project.tagline}</CardDescription>
-      </CardHeader>
-      <CardFooter className="flex items-end justify-between gap-6 max-sm:flex-col max-sm:items-start">
-        <div className="flex gap-2">
-          <TooltipProvider>
-            {project.tech.map((tech) => (
-              <TooltipWrapper key={tech} label={tech}>
-                <div className="bg-white w-[22px] h-[22px] flex items-center justify-center rounded-full">
-                  <Image src={icons.find(
-                    (icon) => icon.value === tech
-                  )?.icon as StaticImageData
-                  } alt={tech} width={16} height={16} />
-                </div>
-              </TooltipWrapper>
-            ))}
-          </TooltipProvider>
-        </div>
-        <div className="flex space-x-4">
-          <a
-            href={project.repoURL}
-            rel="noreferer noopener"
-            className={buttonVariants({
-              variant: 'default',
-              className:
-                'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2',
-            })}
-            target="_blank"
-          >
-            Repo <ExternalLink className="w-4 h-4" />
-          </a>
-          {project.demoURL && (
-            <a
-              href={project.demoURL}
-              rel="noreferer noopener"
-              className={buttonVariants({
-                variant: 'default',
-                className:
-                  'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2',
-              })}
-              target="_blank"
-            >
-              Demo <ExternalLink className="w-4 h-4" />
-            </a>
-          )}
-        </div>
-      </CardFooter>
-    </Card>
-  );
+export default function ProjectCard({ project }: {
+	project: Data & {
+		title: string;
+	}
+}) {
+	return (
+		<Card className="justify-start rounded-md text-left flex flex-col max-[490px]:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br border-primary/10">
+			<CardHeader className="gap-0">
+				<a
+					href={`https://github.com/saadfrhan/${project.title}`}
+					rel="noreferer noopener"
+					target="_blank"
+				>
+					<CardTitle className="text-lg font-bold hover:underline items-center leading-none">
+						{project.title}
+					</CardTitle>
+				</a>
+				<CardDescription>{project.description}</CardDescription>
+			</CardHeader>
+			<CardFooter className="flex w-full items-end max-[490px]:flex-col justify-between">
+				<div className='flex gap-4 items-center text-xs text-muted-foreground w-full'>
+					<div className='flex items-center gap-1'>
+						<span className="bg-[#3178c6] relative top-[1px] inline-block w-3 h-3 rounded-full border" />
+						{project.language}
+					</div>
+					<a
+						href={`https://github.com/saadfrhan/${project.title}/stargazers`}
+						rel="noreferer noopener"
+						className='hover:text-primary flex justify-center items-center'
+						target="_blank">
+						<Star className='w-4 h-4 mr-1' />
+						{project.stargazers_count}
+					</a>
+					<a
+						href={`https://github.com/saadfrhan/${project.title}/forks`}
+						rel="noreferer noopener"
+						className='hover:text-primary flex justify-center items-center'
+						target="_blank">
+						<GitFork className='w-4 h-4 mr-1' />
+						{project.forks_count}
+					</a>
+				</div>
+				<div className="flex gap-4 w-full justify-end">
+					<a
+						href={`https://github.com/saadfrhan/${project.title}`}
+						rel="noreferer noopener"
+						className={buttonVariants({
+							variant: 'default',
+							className:
+								'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2 max-[490px]:h-auto max-[490px]:p-0 max-[490px]:bg-transparent max-[490px]:hover:underline max-[490px]:hover:bg-transparent max-[490px]:border-none max-[490px]:mt-3 max-[490px]:hover:border-none',
+						})}
+						target="_blank"
+					>
+						Repo <ExternalLink className="w-4 h-4" />
+					</a>
+					{project.homepage && (
+						<a
+							href={project.homepage}
+							rel="noreferer noopener"
+							className={buttonVariants({
+								variant: 'default',
+								className:
+									'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2 max-[490px]:h-auto max-[490px]:p-0 max-[490px]:bg-transparent max-[490px]:hover:underline max-[490px]:hover:bg-transparent max-[490px]:border-none max-[490px]:mt-3 max-[490px]:hover:border-none',
+							})}
+							target="_blank"
+						>
+							Demo <ExternalLink className="w-4 h-4" />
+						</a>
+					)}
+				</div>
+			</CardFooter>
+		</Card>
+	);
 }
