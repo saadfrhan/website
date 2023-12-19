@@ -58,7 +58,7 @@ export default function ProjectCard({ project }: {
 						className={buttonVariants({
 							variant: 'default',
 							className:
-								'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2 max-[490px]:h-auto max-[490px]:p-0 max-[490px]:bg-transparent max-[490px]:hover:underline max-[490px]:hover:bg-transparent max-[490px]:border-none max-[490px]:mt-3 max-[490px]:hover:border-none',
+								'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2 max-[490px]:h-auto max-[490px]:p-0 max-[490px]:bg-transparent max-[490px]:hover:underline max-[490px]:hover:bg-transparent max-[490px]:border-none max-[490px]:mt-3 max-[490px]:hover:border-none max-[490px]:text-foreground',
 						})}
 						target="_blank"
 					>
@@ -71,7 +71,7 @@ export default function ProjectCard({ project }: {
 							className={buttonVariants({
 								variant: 'default',
 								className:
-									'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2 max-[490px]:h-auto max-[490px]:p-0 max-[490px]:bg-transparent max-[490px]:hover:underline max-[490px]:hover:bg-transparent max-[490px]:border-none max-[490px]:mt-3 max-[490px]:hover:border-none',
+									'hover:border-primary bg-primary duration-300 border-[2px] border-transparent flex gap-2 max-[490px]:h-auto max-[490px]:p-0 max-[490px]:bg-transparent max-[490px]:hover:underline max-[490px]:hover:bg-transparent max-[490px]:border-none max-[490px]:mt-3 max-[490px]:hover:border-none max-[490px]:text-foreground',
 							})}
 							target="_blank"
 						>
