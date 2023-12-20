@@ -12,9 +12,9 @@ export const metadata = {
 
 export default function About() {
 	return (
-		<div className="container mx-auto p-8 max-sm:p-0 prose dark:prose-invert max-w-2xl max-sm:max-w-full flex flex-col">
+		<div className="max-sm:p-0 prose dark:prose-invert flex flex-col">
 			<section className="flex flex-col">
-				<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+				<h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
 					Hi, I&#39;m {profile.fullName} 🌟
 				</h1>
 
