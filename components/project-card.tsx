@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: {
 				</a>
 				<CardDescription>{project.description}</CardDescription>
 			</CardHeader>
-			<CardFooter className="flex w-full items-end max-[490px]:flex-col justify-between">
+			<CardFooter className="flex w-full items-end max-[413px]:flex-col justify-between">
 				<div className='flex gap-4 items-center text-xs text-muted-foreground w-full'>
 					<div className='flex items-center gap-1'>
 						<span className="bg-[#3178c6] relative top-[1px] inline-block w-3 h-3 rounded-full border" />

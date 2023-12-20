@@ -10,9 +10,9 @@ export default async function Home() {
 			<section className="flex items-start justify-between xl:items-center xl:justify-center">
 				<div className="space-y-4">
 					<div className="relative flex w-full items-center justify-center gap-4 lg:justify-start">
-						<div className="absolute left-1/2 top-1/2 -z-10 max-sm:w-32 hidden h-56 w-56 -translate-x-[15%] -translate-y-[50%] rounded-full bg-gradient-to-br from-blue-500 to-purple-500/20 blur-3xl dark:block animate-pulse"></div>
-						<div className="absolute right-1/2 top-1/2 -z-10 hidden h-56 w-56 -translate-y-[40%] rounded-full bg-gradient-to-br from-pink-500 to-red-500/20 blur-3xl dark:block animate-pulse"></div>
-						<h1 className="scroll-m-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold tracking-tight text-white animate__animated animate__fadeInUp">
+						<div className="absolute left-1/2 top-1/2 -z-10 max-sm:w-32 h-56 w-56 -translate-x-[15%] -translate-y-[50%] rounded-full bg-gradient-to-br from-blue-500 to-purple-500/20 blur-3xl  animate-pulse"></div>
+						<div className="absolute right-1/2 top-1/2 -z-10 h-56 w-56 -translate-y-[40%] rounded-full bg-gradient-to-br from-pink-500 to-red-500/20 blur-3xl  animate-pulse"></div>
+						<h1 className="scroll-m-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold tracking-tight text-foreground animate__animated animate__fadeInUp">
 							<span className="relative z-10">{profile.headline}</span>
 						</h1>
 					</div>
