@@ -46,6 +46,7 @@ export default async function Home() {
 							return (
 								<Anchor
 									href={value}
+									key={id}
 									className={buttonVariants({
 										variant: 'secondary',
 										size: 'icon',
