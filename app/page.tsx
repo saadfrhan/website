@@ -28,7 +28,7 @@ export default async function Home() {
 					<div>
 						<h3>Welcome to my digital space!</h3>
 						<p>
-							I'm Saad Farhan, a passionate Fullstack developer based in Karachi. I take pride in writing clean and simple code, proficient in various programming languages. Keeping up with the latest in the tech world, I bring a team-friendly and detailed approach to projects. My goal is to create straightforward and reliable software that meets user needs.
+							I&#39;m Saad Farhan, a passionate Fullstack developer based in Karachi. I take pride in writing clean and simple code, proficient in various programming languages. Keeping up with the latest in the tech world, I bring a team-friendly and detailed approach to projects. My goal is to create straightforward and reliable software that meets user needs.
 						</p>
 					</div>
 				</div>
