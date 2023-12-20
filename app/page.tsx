@@ -46,7 +46,7 @@ export default async function Home() {
 			<Projects />
 			<GetInTouch />
 			<p className='border-t pt-4 text-xs'>
-				Made with <Anchor href="https://nextjs.org">Next.js</Anchor>, <Anchor href='https://tailwindcss.com'>Tailwind CSS</Anchor>, and <Anchor href='https://typescriptlang.org'>TypeScript</Anchor> 🖤
+				Made with <Anchor href="https://nextjs.org">Next.js</Anchor>, <Anchor href='https://tailwindcss.com'>Tailwind CSS</Anchor>, and <Anchor href='https://typescriptlang.org'>TypeScript</Anchor>
 			</p>
 		</main>
 	);
