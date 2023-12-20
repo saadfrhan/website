@@ -18,13 +18,9 @@ export default function ProjectCard({ project }: {
 	return (
 		<Card className="justify-start rounded-md text-left flex flex-col max-[490px]:gap-y-2 drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] dark:drop-shadow-[0_0_15px_rgba(49,49,49,0.2)] bg-gradient-to-b from-neutral-50/90 to-neutral-100/90 transition duration-300 dark:from-neutral-950/90 dark:to-neutral-800/90 lg:bg-gradient-to-br border-primary/10">
 			<CardHeader className="gap-0">
-				<Anchor
-					href={`https://github.com/saadfrhan/${project.title}`}
-				>
-					<CardTitle className="text-lg font-bold not-prose my-0">
-						{project.title}
-					</CardTitle>
-				</Anchor>
+				<CardTitle className="text-lg font-bold not-prose my-0">
+					{project.title}
+				</CardTitle>
 				<CardDescription>{project.description}</CardDescription>
 			</CardHeader>
 			<CardFooter className="flex w-full items-end max-[413px]:flex-col justify-between">
