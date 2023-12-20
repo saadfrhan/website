@@ -5,7 +5,7 @@ import { getRepositoryInfo } from "@/lib/utils";
 export default function Projects() {
 	return (
 		<section className="space-y-6 pt-4" id="projects">
-			<h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+			<h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 mb-4">
 				Projects
 			</h2>
 			<div className="mt-4 space-y-6">

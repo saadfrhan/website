@@ -8,9 +8,6 @@ import Link from 'next/link';
 const navItems = {
 	'/': {
 		name: 'home',
-	},
-	'/about': {
-		name: 'about',
 	}
 };
 
@@ -37,25 +34,16 @@ export default function Navbar() {
 	);
 }
 
-let cx = (...classes: any) => classes.filter(Boolean).join(' ');
-
 function NavItem({ path, name }: { path: string; name: string }) {
 	let pathname = usePathname() || '/';
-	if (pathname.includes('/blog/')) {
-		pathname = '/blog';
-	}
+
 	let isActive = path === pathname;
 
 	return (
 		<Link
 			key={path}
 			href={path}
-			className={cx(
-				'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
-				{
-					'text-neutral-500': !isActive,
-				}
-			)}
+			className={`transition-all flex align-middle ${!isActive ? 'text-muted-foreground hover:text-foreground' : 'text-foreground'}`}
 		>
 			<span className="relative py-1 px-2">
 				{name}

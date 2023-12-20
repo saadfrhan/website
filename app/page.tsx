@@ -3,51 +3,66 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { TooltipWrapper } from '@/lib/utils';
 import { profile } from '@/lib/constants';
 import Projects from '@/components/projects';
+import Image from 'next/image';
+import Me from '/public/me.png'
+import GetInTouch from '@/components/get-in-touch';
+import Anchor from '@/components/anchor';
+import { GithubIcon, LinkedinIcon, LucideIcon } from 'lucide-react';
 
 export default async function Home() {
 	return (
-		<main className="space-y-6 pb-8">
-			<section className="flex items-start justify-between xl:items-center xl:justify-center">
-				<div className="space-y-4">
-					<div className="relative flex w-full items-center justify-center gap-4 lg:justify-start">
-						<div className="absolute left-1/2 top-1/2 -z-10 max-sm:w-32 h-56 w-56 -translate-x-[15%] -translate-y-[50%] rounded-full bg-gradient-to-br from-blue-500 to-purple-500/20 blur-3xl  animate-pulse"></div>
-						<div className="absolute right-1/2 top-1/2 -z-10 h-56 w-56 -translate-y-[40%] rounded-full bg-gradient-to-br from-pink-500 to-red-500/20 blur-3xl  animate-pulse"></div>
-						<h1 className="scroll-m-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold tracking-tight text-foreground animate__animated animate__fadeInUp">
-							<span className="relative z-10">{profile.headline}</span>
-						</h1>
-					</div>
+		<main className="space-y-2 prose prose-neutral dark:prose-invert pb-8">
+			<section className="flex flex-col">
+				<h1>
+					Hi, I&#39;m {profile.fullName} 🌟
+				</h1>
 
-
-					<p className="[&:not(:first-child)]:mt-6 text-base leading-relaxed">{profile.bio}</p>
-					<div className="flex flex-wrap items-center gap-2">
-						<TooltipProvider>
-							{Object.entries(profile.links)
-								.sort()
-								.map(([label, value], id) => {
-									const { icon: Icon, link } = value;
-									return (
-										<TooltipWrapper key={id} label={label}>
-											<a
-												href={link}
-												rel="noreferer noopener"
-												target="_blank"
-												className={buttonVariants({
-													size: 'icon',
-													variant: 'ghost',
-													className:
-														`h-12 w-12 hover:border-[2px] hover:border-primary duration-300`,
-												})}
-											>
-												<Icon size={24} />
-											</a>
-										</TooltipWrapper>
-									);
-								})}
-						</TooltipProvider>
+				<div className="flex gap-x-6 items-center max-md:flex-col">
+					<Image
+						src={Me}
+						alt="Saad Farhan"
+						width={305}
+						height={305}
+						className="rounded-md w-52 max-[320px]:w-full object-cover mb-4 md:w-64 md:h-64 lg:mb-0"
+					/>
+					<div>
+						<h3>Welcome to my digital space!</h3>
+						<p>
+							I'm Saad Farhan, a passionate Fullstack developer based in Karachi. I take pride in writing clean and simple code, proficient in various programming languages. Keeping up with the latest in the tech world, I bring a team-friendly and detailed approach to projects. My goal is to create straightforward and reliable software that meets user needs.
+						</p>
 					</div>
+				</div>
+
+				<div className='flex gap-4'>
+					{Object.entries(profile.links)
+						.sort()
+						.map(([label, value], id) => {
+							const icon: {
+								[x: string]: JSX.Element
+							} = {
+								"GitHub": <GithubIcon />,
+								"LinkedIn": <LinkedinIcon />
+							}
+							return (
+								<Anchor
+									href={value}
+									className={buttonVariants({
+										variant: 'secondary',
+										size: 'icon',
+										className: 'no-underline border-neutral-700 border'
+									})}
+								>
+									{icon[label]}
+								</Anchor>
+							);
+						})}
 				</div>
 			</section>
 			<Projects />
+			<GetInTouch />
+			<p className='border-t pt-4'>
+				Made with <Anchor href="https://nextjs.org">Next.js</Anchor>, <Anchor href='https://tailwindcss.com'>Tailwind CSS</Anchor>, and <Anchor href='https://typescriptlang.org'>TypeScript</Anchor> 🖤
+			</p>
 		</main>
 	);
 }

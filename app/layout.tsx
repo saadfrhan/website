@@ -57,10 +57,8 @@ export default async function RootLayout({
 				enableSystem
 				disableTransitionOnChange
 			>
-				<body
-					className={`${GeistSans.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}
-				>
-					<main className="flex-auto min-w-0 flex flex-col space-y-3 pb-8 px-4 md:px-0">
+				<body className={`${GeistSans.className} antialiased max-w-2xl flex flex-col md:flex-row mx-auto`}>
+					<main className="flex-auto min-w-0 flex flex-col space-y-3 pb-8 px-4 md:px-0 relative">
 						<Navbar />
 						{children}
 					</main>
