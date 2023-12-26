@@ -33,8 +33,8 @@ export default function Projects() {
               'nestjs-rest-api',
               'intcalc',
               'currconv',
-            ].map((project) => (
-              <ProjectBadge title={project} />
+            ].map((project, index) => (
+              <ProjectBadge title={project} key={index} />
             ))}
           </div>
         </div>
