@@ -15,7 +15,7 @@ export default function Navbar() {
 				Saad Farhan
 			</h1>
 			<nav>
-				<div className="flex items-center gap-x-8 max-md:gap-x-0 justify-center font-raleway max-md:flex-wrap">
+				<div className="flex items-center gap-x-8 max-md:gap-x-0 justify-center font-nunitosans max-md:flex-wrap">
 					{routes.map((route, index) => (
 						<Link key={index} href={route.route} className={buttonVariants({
 							className: `min-[810px]:text-xl bg-transparent hover:bg-transparent max-md:p-2 min-[810px]:font-semibold ${route.route === pathname && "min-[810px]:font-extrabold"}`

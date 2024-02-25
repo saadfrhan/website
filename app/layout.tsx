@@ -20,13 +20,16 @@ const nunitosans = Nunito_Sans({
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Sanity Next.js Portfolio Site",
-	metadataBase: new URL("https://sanity-nextjs-site.vercel.app"),
-	description: "A personal portfolio site built with Sanity and Next.js",
-	openGraph: {
-		images:
-			"https://res.cloudinary.com/victoreke/image/upload/v1689893059/docs/og.png",
+	title: {
+		default: "Saad Farhan",
+		template: "Saad Farhan",
 	},
+	metadataBase: new URL("https://saadfarhan.vercel.app"),
+	description: "A Frontend Developer and Web Designer from Pakistan. I am a self-taught developer with a passion for creating beautiful and functional websites.",
+	// openGraph: {
+	// 	images:
+	// 		"https://res.cloudinary.com/victoreke/image/upload/v1689893059/docs/og.png",
+	// },
 };
 
 export default function RootLayout({
