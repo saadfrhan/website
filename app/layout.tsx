@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import { Navbar } from '@/components/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { MobileNav } from '@/components/mobile-nav';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://saadfarhan.vercel.app'),
@@ -52,9 +53,10 @@ export default function RootLayout({
 		<html
 			lang="en"
 		>
-			<body className={`antialiased dark max-w-7xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto ${GeistSans.className}`}>
-				<main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+			<body className={`antialiased dark max-w-7xl mb-40 flex flex-col md:flex-row mx-4 mt-8 max-sm:mt-0 lg:mx-auto lg:px-3 ${GeistSans.className}`}>
+				<main className="flex-auto min-w-0 mt-6 flex flex-col">
 					<Navbar />
+					<MobileNav />
 					{children}
 					<Analytics />
 					<SpeedInsights />

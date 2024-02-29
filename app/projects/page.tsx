@@ -1,8 +1,9 @@
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { ExternalLink } from 'lucide-react';
 import Link from "next/link";
+import { FaGithub as GithubIcon } from 'react-icons/fa'
 
 const projects = [
 	{
@@ -16,55 +17,97 @@ const projects = [
 		image: "virtual-lollipop",
 		title: "Virtual Lollipop",
 		description: "Virtual Lollipop App using FaunaDB, TailwindCSS and Next.js",
-		tech: [{ label: "Next.js", name: 'nextjs' }, { label: "TailwindCSS", name: "tailwindcss" }, { label: "FaunaDB", name: 'faunadb' }],
+		tech: [{ label: "Next.js", name: 'nextjs' }, { label: "TailwindCSS", name: "tailwindcss" }, { label: "FaunaDB", name: 'faunadb' }, { label: "TypeScript", name: "typescript" }],
 		demo: "https://virtual-lollypop.vercel.app/"
 	},
 	{
 		image: "friendly-logger",
 		title: "Friendly Logger",
-		description: "A colorful and customizable Node.js logging package for a user-friendly development experience",
-		tech: [{ label: "Node.js", name: 'nodejs' }],
+		description: "A colorful and customizable Node.js logging package.",
+		tech: [{ label: "Node.js", name: 'nodejs' }, { label: "TypeScript", name: "typescript" }],
 		demo: "https://virtual-lollypop.vercel.app/"
+	},
+	{
+		image: "photo-editor",
+		title: "Photo Editor",
+		description: "Simple Photo Editor with React.js",
+		tech: [{ label: "React.js", name: 'reactjs' }, { label: "TailwindCSS", name: "tailwindcss" }, { label: "TypeScript", name: "typescript" }],
+		demo: "https://photo-editor-flame.vercel.app/"
+	},
+	{
+		image: "react-quizapp",
+		title: "Quiz App",
+		description: "Quiz App with React.js and OpenTDB API",
+		tech: [{ label: "React.js", name: 'reactjs' }, { label: "TailwindCSS", name: "tailwindcss" }, { label: "TypeScript", name: "typescript" }],
+		demo: "https://react-quizapp-topaz.vercel.app/"
+	},
+	{
+		image: "photo-album",
+		title: "Photo Album",
+		description: "Photo Album with Cloudinary, TailwindCSS and Next.js.",
+		tech: [{ label: "Next.js", name: 'nextjs' }, { label: "TailwindCSS", name: "tailwindcss" }, { label: "Cloudinary", name: "cloudinary" }, { label: "TypeScript", name: "typescript" }],
+		demo: "https://github.com/saadfrhan/photo-album"
+	}, {
+		image: "bookshelf",
+		title: "Bookshelf",
+		description: "A MERN Stack Bookshelf Application",
+		tech: [{ label: "React.js", name: 'reactjs' }, { label: "TailwindCSS", name: 'tailwindcss' }, { label: "Express.js", name: "expressjs" }, { label: "Node.js", name: "nodejs" }, { label: "TypeScript", name: "typescript" }, { label: "MongoDB", name: "mongodb" }, { label: "Mongoose", name: "mongoose" }],
+		demo: "https://github.com/saadfrhan/bookshelf"
+
+	},
+	{
+		image: "node-typescript-cli",
+		title: "Node.js CLI Template",
+		description: "Template for CLI Development with Node.js",
+		tech: [{ label: "Node.js", name: 'nodejs' }, { label: "TypeScript", name: "typescript" }],
+		demo: "https://github.com/saadfrhan/bookshelf"
+
 	}
 ]
 
 export default function Page() {
 	return (
 		<div>
-			<h2 className="font-medium text-2xl mb-8 tracking-tighter">
-				Projects
-			</h2>
-			<div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-2">
+			<div className="flex justify-between w-full">
+				<h2 className="font-medium text-2xl mb-8 tracking-tighter">
+					Projects
+				</h2>
+				<Link href="https://github.com/saadfrhan" target="_blank" className={buttonVariants({
+					variant: "outline",
+					size: "icon"
+				})}><GithubIcon className="w-4 h-4" /></Link>
+			</div>
+			<div className="grid grid-cols-3 h-auto max-md:grid-cols-1 max-lg:grid-cols-2 gap-2">
 				{projects.map((project, index) => (
-					<Card key={index} className="h-fit rounded-[20px]">
-						<CardContent className="p-0 flex flex-col gap-y-2">
+					<Card key={index} className="rounded-[20px] p-0">
+						<CardHeader className="p-0">
 							<Image src={`/images/${project.image}.png`} className="w-full rounded-t-[20px]" alt={project.description} width="3200" height="1718" />
-							<div className="py-3 px-4">
-								<div className="flex flex-col gap-y-2">
-									<CardTitle>{project.title}</CardTitle>
-									<CardDescription>{project.description}</CardDescription>
+						</CardHeader>
+						<CardContent className="flex flex-col p-3 gap-y-2 justify-between lg:h-32">
+							<div className="flex flex-col gap-y-2">
+								<CardTitle>{project.title}</CardTitle>
+								<CardDescription className="text-sm">{project.description}</CardDescription>
+							</div>
+							<div className="flex w-full self-end items-end justify-between">
+								<div className="flex gap-2 flex-wrap">
+									{project.tech.map((t, idx) => (
+										<div className="bg-white rounded-full border border-[#3c4043] w-6 h-6 flex justify-center items-center" key={idx}>
+											<Image src={`/images/${t.name}.png`} width={16} height={16} alt={t.label} />
+										</div>
+									))}
 								</div>
-								<div className="flex w-full justify-between items-center">
-									<div className="flex gap-2 flex-wrap">
-										{project.tech.map((t, idx) => (
-											<div className="bg-white rounded-full border border-[#3c4043] w-6 h-6 flex justify-center items-center" key={idx}>
-												<Image src={`/images/${t.name}.png`} width={16} height={16} alt={t.label} />
-											</div>
-										))}
-									</div>
-									<Link href={project.demo} className={buttonVariants({
-										className: "hover:bg-transparent",
-										variant: "ghost",
-										size: 'icon'
-									})}>
-										<ExternalLink className="w-4 h-4" />
-									</Link>
-								</div>
+								<Link href={project.demo} target="_blank" className={buttonVariants({
+									className: "hover:bg-transparent p-0 w-fit h-fit",
+									variant: "ghost",
+									size: 'icon'
+								})}>
+									<ExternalLink className="w-4 h-4" />
+								</Link>
 							</div>
 						</CardContent>
 					</Card>
 				))}
 			</div>
-		</div>
+		</div >
 	)
 }

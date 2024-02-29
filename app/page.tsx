@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { FaDiscord as DiscordIcon, FaLinkedin as LinkedinIcon, FaGithub as GithubIcon } from 'react-icons/fa'
-import { SiGmail as GmailIcon } from "react-icons/si";
-import { FaFilePdf as PdfIcon } from "react-icons/fa6";
-
+import { buttonVariants } from "@/components/ui/button";
+import { FaGithub as GithubIcon } from 'react-icons/fa'
+import Link from "next/link";
+import Image from "next/image";
 export default function Home() {
 	return (
 		<div className="flex flex-col gap-y-4">
@@ -18,21 +17,34 @@ export default function Home() {
 				</p>
 			</div>
 			<div className="flex gap-2 flex-wrap">
-				<Button size="icon" variant="ghost" className="hover:bg-transparent">
-					<DiscordIcon className="h-8 w-8" />
-				</Button>
-				<Button size="icon" variant="ghost" className="hover:bg-transparent">
-					<LinkedinIcon className="h-8 w-8" />
-				</Button>
-				<Button size="icon" variant="ghost" className="hover:bg-transparent">
-					<GmailIcon className="h-8 w-8" />
-				</Button>
-				<Button size="icon" variant="ghost" className="hover:bg-transparent">
+				<Link href="https://discordapp.com/users/saad." target="_blank" className={buttonVariants({
+					size: 'icon',
+					variant: 'ghost',
+					className: 'hover:bg-transparent sm:hover:scale-110 sm:hover:duration-300 sm:hover:transition-all'
+				})}>
+					<Image src="/images/discord.png" alt="Discord" width="32" height="32" className="h-8 w-8" />
+				</Link>
+				<Link href="https://linkedin.com/in/saad-farhan" target="_blank" className={buttonVariants({
+					size: 'icon',
+					variant: 'ghost',
+					className: 'hover:bg-transparent sm:hover:scale-110 sm:hover:duration-300 sm:hover:transition-all'
+				})}>
+					<Image src="/images/linkedin.png" alt="LinkedIn" width="32" height="32" className="h-8 w-8" />
+				</Link>
+				<Link href="mailto:saadfarhan347@gmail.com" target="_blank" className={buttonVariants({
+					size: 'icon',
+					variant: 'ghost',
+					className: 'hover:bg-transparent sm:hover:scale-110 sm:hover:duration-300 sm:hover:transition-all'
+				})}>
+					<Image src="/images/gmail.png" alt="Gmail" width="32" height="32" className="h-8 w-8" />
+				</Link>
+				<Link href="https://github.com/saadfrhan" target="_blank" className={buttonVariants({
+					size: 'icon',
+					variant: 'ghost',
+					className: 'hover:bg-transparent sm:hover:scale-110 sm:hover:duration-300 sm:hover:transition-all'
+				})}>
 					<GithubIcon className="h-8 w-8" />
-				</Button>
-				<Button size="icon" variant="ghost" className="hover:bg-transparent">
-					<PdfIcon className="h-8 w-8" />
-				</Button>
+				</Link>
 			</div>
 		</div>
 	);

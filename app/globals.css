@@ -58,4 +58,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+	::selection {
+  background-color: hsl(346.8, 77.2%, 49.8%);
+	}
 }
