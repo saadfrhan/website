@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 const navItems = {
@@ -31,9 +32,9 @@ export function NavItems(
 					onClick={onClick}
 					href={path}
 					target={name === "Resume" ? "_blank" : "_self"}
-					className={`transition-all hover:text-primary dark:hover:text-primary flex align-middle relative py-2 px-3 max-sm:w-full max-sm:hover:bg-secondary max-sm:transition-none max-sm:flex shadow-md hover:shadow-lg text-lg text-neutral-800 dark:text-neutral-200 font-bold transform sm:hover:scale-105 ${idx === 0 ? "max-sm:rounded-t-md" : idx === (items.length - 1) && "max-sm:rounded-b-md"} ${idx === (items.length - 1) ? "max-sm:border" : "max-sm:border-t max-sm:border-x"}`}
+					className={`transition-all hover:text-primary dark:hover:text-primary flex items-center align-middle relative py-2 px-3 max-sm:w-full max-sm:hover:bg-secondary max-sm:transition-none max-sm:flex shadow-md hover:shadow-lg text-lg text-neutral-800 dark:text-neutral-200 font-bold transform sm:hover:scale-105 ${idx === 0 ? "max-sm:rounded-t-md" : idx === (items.length - 1) && "max-sm:rounded-b-md"} ${idx === (items.length - 1) ? "max-sm:border" : "max-sm:border-t max-sm:border-x"}`}
 				>
-					{name}
+					{name} {name === "Resume" && <ArrowUpRight className='h-6 w-6 ml-2' />}
 				</Link>
 			);
 		})}
