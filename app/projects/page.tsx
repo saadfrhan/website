@@ -69,7 +69,7 @@ export default function Page() {
 	return (
 		<div>
 			<div className="flex justify-between w-full">
-				<h2 className="font-medium text-2xl mb-8 tracking-tighter">
+				<h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
 					Projects
 				</h2>
 				<Link href="https://github.com/saadfrhan" target="_blank" className={buttonVariants({
