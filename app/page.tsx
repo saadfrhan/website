@@ -2,6 +2,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { FaGithub as GithubIcon } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata = {
+  title: "Home",
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-y-4">

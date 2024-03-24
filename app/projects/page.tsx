@@ -24,11 +24,15 @@ const projects = [
   },
 ];
 
+export const metadata = {
+  title: "Projects",
+};
+
 export default function Page() {
   return (
-    <div>
+    <div className="space-y-4">
       <div className="flex justify-between w-full">
-        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
           Projects
         </h2>
         <Link
@@ -44,11 +48,11 @@ export default function Page() {
       </div>
       <div className="grid grid-cols-3 h-auto max-md:grid-cols-1 max-lg:grid-cols-2 gap-2">
         {projects.map((project, index) => (
-          <Card key={index} className="rounded-[20px] p-0">
+          <Card key={index} className="p-0">
             <CardHeader className="p-0">
               <Image
                 src={`/images/${project.image}.png`}
-                className="w-full rounded-t-[20px]"
+                className="w-full rounded-t-md"
                 alt={project.description}
                 width="3200"
                 height="1718"
