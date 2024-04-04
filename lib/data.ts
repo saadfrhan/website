@@ -11,7 +11,7 @@ export const navItems = {
   "/stuff": {
     name: "Stuff",
   },
-  "https://www.dropbox.com/scl/fi/ghtqqnmupayyju2l19v7l/cv.pdf?rlkey=6cg5eemygrp62awge7vgtuu5y&dl=0":
+  "https://www.canva.com/design/DAFb3337tIA/nh3rOWE5EiM7U2QB5yQK5A/edit":
     {
       name: "Resume",
     },
