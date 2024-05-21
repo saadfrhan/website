@@ -10,9 +10,7 @@ export default function Home() {
           href="https://saadfarhan-old.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonVariants({
-            variant: "link",
-          })}
+          className="text-link p-0 underline-offset-4 hover:underline"
         >
           Old site
         </Link>
@@ -20,9 +18,7 @@ export default function Home() {
           href="https://saadfarhan-bio.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonVariants({
-            variant: "link",
-          })}
+          className="text-link p-0 underline-offset-4 hover:underline"
         >
           Bio site
         </Link>
