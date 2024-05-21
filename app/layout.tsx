@@ -10,7 +10,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Saad Farhan",
-  description: "Fullstack Developer",
+  description:
+    "Next.js geek. Currently building Next.js projects, exploring FastAPI and CLI stuff.Always up for learning new things!",
 };
 
 export default function RootLayout({
